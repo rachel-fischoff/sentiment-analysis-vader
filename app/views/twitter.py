@@ -19,4 +19,3 @@ def bad_request():
 def server_error():
     """Internal server error."""
     return make_response(render_template("500.html"), 500)
-

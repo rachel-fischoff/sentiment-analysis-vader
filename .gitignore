@@ -130,3 +130,6 @@ dmypy.json
 
 #instance
 instance/
+
+#node modules
+node_modules/

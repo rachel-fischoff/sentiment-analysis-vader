@@ -7,3 +7,6 @@ app = Flask(__name__, instance_relative_config=True)
 app.register_blueprint(home, text, twitter)
 app.config.from_object('config')
 app.config.from_pyfile('config.py')
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
