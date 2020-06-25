@@ -1,0 +1,27 @@
+ngrams,total_words
+a,1
+well,1
+new,1
+it,1
+works,1
+hope,1
+i,1
+fridge,1
+works well,2
+fridge i,2
+hope it,2
+a new,2
+i hope,2
+it works,2
+new fridge,2
+hope it works,3
+i hope it,3
+fridge i hope,3
+it works well,3
+a new fridge,3
+new fridge i,3
+new fridge i hope,4
+fridge i hope it,4
+hope it works well,4
+i hope it works,4
+a new fridge i,4

@@ -1,0 +1,1 @@
+['celebrate samantha birthday', array([0.23725666], dtype=float32), 'let celebrate samantha', array([0.48108035], dtype=float32)]
