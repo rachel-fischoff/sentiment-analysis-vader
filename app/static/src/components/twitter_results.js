@@ -13,6 +13,13 @@ import Box from '@material-ui/core/Box'
 import NavBar from './nav_bar'
 import NGramTwitterResults from './n_gram_twitter'
 import axios from 'axios'
+import Button from '@material-ui/core/Button'
+import {Link} from 'react-router-dom'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import HomeIcon from '@material-ui/icons/Home';
+import CardMedia from '@material-ui/core/CardMedia' 
+import TwitterLogo from '../Twitter_Social_Icon_Rounded_Square_Color.svg'
+// import borderRadius from '@material-ui/system'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(2),
         textAlign: 'center',
-        color: theme.palette.text.secondary,
+        color: theme.palette.text.primary,
         border: '1px solid #d3d4d5',
         margin: 'auto',
 
@@ -53,7 +60,19 @@ const useStyles = makeStyles((theme) => ({
       height: theme.spacing(7),
       textAlign: 'center',
     },
+    media: {
+      height: 40,
+      bgcolor: 'background.paper',
+      borderColor: 'text.primary',
+      m: 1,
+      border: 1,
+      style: { width: '5rem', height: '5rem' },
+    },
+    avatar: {
+      float:'left',
+    },
   }));
+
 
   export default function TwitterResults(props) {
   
@@ -101,16 +120,21 @@ useEffect(() => {
           <NavBar/>
           {tweets.map((element, index) => 
             <Box className={classes.box} key={index}>
-            <Paper className={classes.paper} >
-            <Avatar aria-label="tweet" className={classes.large} src = {element.profile_pic}>
-                
-                </Avatar>
-                <Typography paragraph>  {element.user_screen_name} </Typography>
-                <Typography color="textPrimary" fontWeight="fontWeightBold"  variant="h6">
-                {term}
-                <br/>
+              <Typography color="textPrimary" fontWeight="fontWeightBold"  variant="h6">
+                  search term = {term} 
+                  <br/>
            
-                </Typography>
+                  </Typography>
+   
+              <Paper className={classes.paper} >
+              <Avatar className={classes.avatar} src={TwitterLogo} /> 
+
+        
+            <Avatar className={classes.avatar} src={element.profile_pic}/>
+          
+
+                <Typography paragraph>  user name :{element.user_screen_name} </Typography>
+
                
                 <Typography paragraph>
                   {element.text}
@@ -187,6 +211,31 @@ useEffect(() => {
             </Paper>
             </Box>
             )}
+
+            <Link to={{ pathname: "/twitter" }}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className={classes.button}
+                  size="large"
+                  type = "submit"
+                  startIcon={<ArrowBackIcon>ArrowBackIcon</ArrowBackIcon>}
+                    >
+                    Go Back 
+                  </Button> 
+                </Link>  
+                <Link to={{ pathname: "/home" }}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className={classes.button}
+                  size="large"
+                  type = "submit"
+                  startIcon={<HomeIcon>HomeIcon</HomeIcon>}
+                    >
+                    Home 
+                    </Button> 
+                  </Link>  
         </div>
 )
 }

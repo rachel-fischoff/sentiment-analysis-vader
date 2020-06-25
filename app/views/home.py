@@ -4,6 +4,7 @@ import json, csv, re
 import pandas as pd
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+nltk.download('vader_lexicon')
 
 home = Blueprint('home', __name__)
 CORS(home)

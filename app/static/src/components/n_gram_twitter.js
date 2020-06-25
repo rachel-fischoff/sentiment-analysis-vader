@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 export default function NGramTwitterResults(props) {
     
     const [dataset, setDataset] = useState({ngrams: [], scores: [{ 'compound': 0, 'neg': 0, 'neu': 0, 'pos': 0}], total_words: []})
-    console.log(props)
+   
     const classes = useStyles ();
 
     useEffect(() => {

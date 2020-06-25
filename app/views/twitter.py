@@ -14,6 +14,11 @@ vader = SentimentIntensityAnalyzer()
 twitter = Blueprint('twitter', __name__)
 CORS(twitter)
 
+new_words = {
+    'protest': 0,
+    'protesters': 0
+}
+vader.lexicon.update(new_words)
 
 @twitter.route('/twitter', methods = ['GET', 'POST'])
 # route handling
@@ -34,10 +39,10 @@ def return_tweets():
         #     t.append({'text':'','profile_pic': '','user_screen_name':
         #     '','created_at': ''})
         # else:
-        t.append({'text': tweet.full_text,'profile_pic': tweet.user.profile_image_url,'user_screen_name':
+        t.append({'text': tweet.full_text,'profile_pic': tweet.user.profile_image_url_https,'user_screen_name':
         tweet.user.screen_name,'created_at': tweet.created_at})
         df['text'] = [tweet.full_text]
-        df.to_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/twitter_text.csv', encoding='utf-8')
+        df.to_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/twitter_text.csv', encoding='utf-8', mode='a')
         
     return jsonify({'tweets': t})
 
