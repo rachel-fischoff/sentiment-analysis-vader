@@ -1,13 +1,12 @@
 from flask import Blueprint, render_template, make_response, request, jsonify
+from flask_cors import CORS
 import json, csv, re
 import pandas as pd
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-import sklearn
-from sklearn.feature_extraction.text import CountVectorizer
-
 
 home = Blueprint('home', __name__)
+CORS(home)
 
 vader = SentimentIntensityAnalyzer()
 
@@ -16,10 +15,11 @@ vader = SentimentIntensityAnalyzer()
 # route handler function
 def get_pos_examples():
     # use pandas to read the csv
-    df = pd.read_csv('/app/views/sample_text_1.csv')
+    df = pd.read_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/sample_text_1.csv')
     df['scores'] = df['ngrams'].apply(lambda
     ngrams: vader.polarity_scores(ngrams))
     df = df.to_dict(orient='list')
+    print(df)
     return jsonify(df)
 
 
@@ -39,7 +39,7 @@ def get_neg_examples():
 
 
    #use pandas to read the csv
-    df = pd.read_csv('sample_text_2.csv')
+    df = pd.read_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/sample_text_2.csv')
     df['scores'] = df['ngrams'].apply(lambda ngrams: vader.polarity_scores(ngrams))
     df = df.to_dict(orient='list')
     return jsonify(df)
@@ -51,10 +51,10 @@ def get_neg_examples():
 #route handler function 
 def return_pos_words ():
     #adds total word column to the csv
-    df = pd.read_csv('app/views/words_sample_1.csv')
+    df = pd.read_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/words_sample_1.csv')
 
     #open the text file 
-    with open ('sample_text_1.txt', 'r') as infile:
+    with open ('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/sample_text_1.txt', 'r') as infile:
         text_analysis = [infile.read()]
 
         print(text_analysis, text_analysis[0], 'txt analysis + text analysis [0]')
@@ -63,7 +63,7 @@ def return_pos_words ():
         print(ordered_list, 'ordered_list')
 
         #use pandas to read the csv
-        df = pd.read_csv('words_sample_1.csv')
+        df = pd.read_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/words_sample_1.csv')
         df['scores'] = df['ngrams'].apply(lambda ngrams: vader.polarity_scores(ngrams))
 
         scored_list = df.values.tolist()
@@ -89,7 +89,7 @@ def return_pos_words ():
 #route handler function 
 def return_neg_words ():
     #adds total word column to the csv
-    df = pd.read_csv('words_sample_2.csv')
+    df = pd.read_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/words_sample_2.csv')
 
     new_words = {
         'thugs': -3.4,
@@ -102,7 +102,7 @@ def return_neg_words ():
 
 
     #open the text file 
-    with open ('sample_text_2.txt', 'r') as infile:
+    with open ('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/sample_text_2.txt', 'r') as infile:
         text_analysis = [infile.read()]
 
         print(text_analysis, text_analysis[0], 'txt analysis + text analysis [0]')
@@ -111,7 +111,7 @@ def return_neg_words ():
         print(ordered_list, 'ordered_list')
 
         #use pandas to read the csv
-        df = pd.read_csv('words_sample_2.csv')
+        df = pd.read_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/words_sample_2.csv')
         df['scores'] = df['ngrams'].apply(lambda ngrams: vader.polarity_scores(ngrams))
 
         scored_list = df.values.tolist()
