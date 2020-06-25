@@ -24,25 +24,24 @@ vader.lexicon.update(new_words)
 # route handling
 def return_tweets():
 
-    t = []
-    
-
     query = request.get_json()
     # Authenticate to Twitter
     auth = tweepy.AppAuthHandler(current_app.config['API_KEY'], current_app.config['API_SECRET'])
     api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
     tweets = tweepy.Cursor(api.search, tweet_mode='extended', lang='en', q=query).items(1)
+    #create data frame for text + list t for twitter info
     df = pd.DataFrame()
+    t = []
 
     for tweet in tweets:
-        # if tweets is None:
-        #     t.append({'text':'','profile_pic': '','user_screen_name':
-        #     '','created_at': ''})
-        # else:
-        t.append({'text': tweet.full_text,'profile_pic': tweet.user.profile_image_url_https,'user_screen_name':
-        tweet.user.screen_name,'created_at': tweet.created_at})
-        df['text'] = [tweet.full_text]
-        df.to_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/twitter_text.csv', encoding='utf-8', mode='a')
+        if tweets is None:
+            t.append({'text':'','profile_pic': '','user_screen_name':
+            '','created_at': '', 'id':''})
+        else:
+            t.append({'text': tweet.full_text,'profile_pic': tweet.user.profile_image_url_https,'user_screen_name':
+            tweet.user.screen_name,'created_at': tweet.created_at, 'id': tweet.id})
+            df['text'] = [tweet.full_text]
+            df.to_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/twitter_text.csv', encoding='utf-8', mode='a')
         
     return jsonify({'tweets': t})
 

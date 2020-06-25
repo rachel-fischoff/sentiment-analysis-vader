@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
   const term = props.location.state.term
 
   const [expanded, setExpanded] = useState(false);
-  const [tweets, setTweets] = useState([{'created_at': '', 'profile_pic': '', 'text': '', 'user_screen_name': ''}]);
+  const [tweets, setTweets] = useState([{'created_at': '', 'profile_pic': '', 'text': '', 'user_screen_name': '', 'id': ''}]);
   const [words, setWords] = useState([])
   const [dataset, setDataset] = useState({ngrams: [], scores: [{ 'compound': 0, 'neg': 0, 'neu': 0, 'pos': 0}], total_words: []})
 
@@ -108,6 +108,7 @@ const useStyles = makeStyles((theme) => ({
 
 }
 
+
 useEffect(() => {
   fetchData();
 }, []);
@@ -121,19 +122,15 @@ useEffect(() => {
           {tweets.map((element, index) => 
             <Box className={classes.box} key={index}>
               <Typography color="textPrimary" fontWeight="fontWeightBold"  variant="h6">
-                  search term = {term} 
+                  Your Search Term is {term} 
                   <br/>
            
                   </Typography>
    
               <Paper className={classes.paper} >
               <Avatar className={classes.avatar} src={TwitterLogo} /> 
-
-        
-            <Avatar className={classes.avatar} src={element.profile_pic}/>
-          
-
-                <Typography paragraph>  user name :{element.user_screen_name} </Typography>
+              <Avatar className={classes.avatar} src={element.profile_pic} onClick={()=>window.open(`https://twitter.com/${element.user_screen_name}/status/${element.id}`, "blank")}/>
+                <Typography paragraph>  Twitter Handle is {element.user_screen_name} </Typography>
 
                
                 <Typography paragraph>
@@ -141,6 +138,8 @@ useEffect(() => {
                
 
                   <br/>
+                  <br/>
+
                   {words.map((element, index)  => { 
                       if(element[2].pos > 0) {
            
