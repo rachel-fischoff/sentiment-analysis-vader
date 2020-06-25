@@ -15,7 +15,6 @@ import SearchBarText from './components/search_bar_text';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import SearchBarTweet from './components/search_bar_twitter'
 
-
 const store = createStore(rootReducer, {}, applyMiddleware(thunk));
 
 render(
