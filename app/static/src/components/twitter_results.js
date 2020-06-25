@@ -76,14 +76,15 @@ const useStyles = makeStyles((theme) => ({
       },console.log(term))
       .then(response => 
       setTweets(response.data.tweets))
-      // .then(data => {
-      //   axios.get('http://localhost:5000/twitter/words')
-      //     .then(response => setWords(response.data))
+      .then(data => {
+        axios.get('http://localhost:5000/twitter/words')
+          .then(response => 
+            setWords(response.data))
       //     .then(data => {
       //       axios.get('http://localhost:5000/twitter/ngrams')
       //         .then(response => setDataset(response.data))
       //     })
-      // })
+      })
       .catch(error => console.log(error));
 
 }
@@ -116,7 +117,7 @@ useEffect(() => {
                
 
                   <br/>
-                  {/* {words.map((element, index)  => { 
+                  {words.map((element, index)  => { 
                       if(element[2].pos > 0) {
            
                       return (
@@ -162,7 +163,7 @@ useEffect(() => {
                         /> 
                     )} 
                     
-                    })} */}
+                    })}
 
 
                       <br/>
