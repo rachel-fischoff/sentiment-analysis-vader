@@ -1,36 +1,36 @@
 from flask import Blueprint, render_template, make_response, jsonify, request
 from flask_cors import CORS
-import json, csv, re
+import csv
+import re
+import json
 import pandas as pd
-import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-import sklearn
 from sklearn.feature_extraction.text import CountVectorizer
 
 text = Blueprint('text', __name__)
 CORS(text)
 vader = SentimentIntensityAnalyzer()
 
-#defining the post route for the text submitted by the user 
-@text.route('/text', methods = ['POST'])
 
-#route handler function 
-def anaylze_text (): 
+# defining the post route for the text submitted by the user
+@text.route('/text', methods=['POST'])
+# route handler function
+def anaylze_text():
     text_data = request.get_json()
 
-    #writes data to text file sentiment analysis
-    with open ('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/text.txt', 'w') as outfile:
+    # writes data to text file sentiment analysis
+    with open('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/text.txt', 'w') as outfile:
         json.dump(text_data['text'], outfile)
         return text_data
 
 
-#defining the get route for each word and each of their score 
-@text.route('/text/words', methods = ['GET'])
+# defining the get route for each word and each of their score 
+@text.route('/text/words', methods=['GET'])
 
-#route handler function 
-def return_words ():
-        #open the text file 
-    with open ('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/text.txt', 'r') as infile:
+# route handler function 
+def return_words():
+        # open the text file 
+    with open('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/text.txt', 'r') as infile:
         text_analysis = [infile.read()]
 
         vectorizer = CountVectorizer(analyzer='word', ngram_range=(1, 4), token_pattern=r'\b\w+\b', min_df=1, stop_words=None)
