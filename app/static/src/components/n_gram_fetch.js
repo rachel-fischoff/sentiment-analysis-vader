@@ -49,20 +49,6 @@ export default function NGramTextResults(props) {
     const [dataset, setDataset] = useState({ngrams: [], scores: [{ 'compound': 0, 'neg': 0, 'neu': 0, 'pos': 0}], total_words: []})
     console.log(props)
     const classes = useStyles ();
-    
-  // if the data is there then send a get request and if it's not there then wait 10 seconds. 
-
-
-    // const fetchData = async () => {
-    //     const response = await axios.get('http://localhost:5000/ngrams')
-    //     .then((response) => {
-    //       console.log(response, 'response');
-    //     }, (error) => {
-    //       console.log(error, 'error');
-    //     });
-    //     setDataset(response.data)
-        
-    // }
 
     useEffect(() => {
         setDataset (props.dataset)

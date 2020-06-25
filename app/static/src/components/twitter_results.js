@@ -80,10 +80,10 @@ const useStyles = makeStyles((theme) => ({
         axios.get('http://localhost:5000/twitter/words')
           .then(response => 
             setWords(response.data))
-      //     .then(data => {
-      //       axios.get('http://localhost:5000/twitter/ngrams')
-      //         .then(response => setDataset(response.data))
-      //     })
+          .then(data => {
+            axios.get('http://localhost:5000/twitter/ngrams')
+              .then(response => setDataset(response.data))
+          })
       })
       .catch(error => console.log(error));
 
@@ -182,7 +182,7 @@ useEffect(() => {
                 </IconButton>
                 </Typography>
                 <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <NGramTwitterResults term = {term}/>
+                <NGramTwitterResults dataset = {dataset}/>
             </Collapse>     
             </Paper>
             </Box>

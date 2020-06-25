@@ -26,7 +26,7 @@ def return_tweets():
     # Authenticate to Twitter
     auth = tweepy.AppAuthHandler(current_app.config['API_KEY'], current_app.config['API_SECRET'])
     api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
-    tweets = tweepy.Cursor(api.search, tweet_mode='extended', lang='en', q=query).items(10)
+    tweets = tweepy.Cursor(api.search, tweet_mode='extended', lang='en', q=query).items(1)
     df = pd.DataFrame()
 
     for tweet in tweets:
@@ -114,7 +114,14 @@ def twitter_analyze():
 
 @twitter.route('/twitter/ngrams', methods = ['GET'])
 def twitter_ngrams_analyze():
-    return jsonify('meow')
+        #use pandas to read the csv
+    df = pd.read_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/ngram_twitter_vader.csv', engine='python')
+    # # I need to remove those double quotes 
+    df['scores'] = df['ngrams'].apply(lambda ngrams: vader.polarity_scores(ngrams))
+    # # df['score'] = df['score'].str.strip('"')
+    df = df.to_dict(orient='list')
+    print(df)
+    return jsonify(df)
 
 
 @twitter.errorhandler(404)
