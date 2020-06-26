@@ -39,7 +39,7 @@ def return_tweets():
             '','created_at': '', 'id':''})
         else:
             t.append({'text': tweet.full_text,'profile_pic': tweet.user.profile_image_url_https,'user_screen_name':
-            tweet.user.screen_name,'created_at': tweet.created_at, 'id': tweet.id})
+            tweet.user.screen_name,'created_at': tweet.created_at, 'id': tweet.id_str})
             df['text'] = [tweet.full_text]
             df.to_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/twitter_text.csv', encoding='utf-8', mode='a')
         

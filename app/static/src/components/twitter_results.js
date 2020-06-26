@@ -71,6 +71,10 @@ const useStyles = makeStyles((theme) => ({
     avatar: {
       float:'left',
     },
+    chip:{
+      margin: theme.spacing(0.5),
+  },
+
   }));
 
 
