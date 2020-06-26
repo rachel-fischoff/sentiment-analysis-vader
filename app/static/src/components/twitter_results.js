@@ -60,14 +60,6 @@ const useStyles = makeStyles((theme) => ({
       height: theme.spacing(7),
       textAlign: 'center',
     },
-    media: {
-      height: 40,
-      bgcolor: 'background.paper',
-      borderColor: 'text.primary',
-      m: 1,
-      border: 1,
-      style: { width: '5rem', height: '5rem' },
-    },
     avatar: {
       float:'left',
     },
@@ -125,19 +117,19 @@ useEffect(() => {
           <NavBar/>
           {tweets.map((element, index) => 
             <Box className={classes.box} key={index}>
-              <Typography color="textPrimary" fontWeight="fontWeightBold"  variant="h6">
+              <Typography component={'span'} color="textPrimary" fontWeight="fontWeightBold"  variant="h6">
                   Your Search Term is {term} 
                   <br/>
            
-                  </Typography>
+                </Typography>
    
               <Paper className={classes.paper} >
               <Avatar className={classes.avatar} src={TwitterLogo} /> 
               <Avatar className={classes.avatar} src={element.profile_pic} onClick={()=>window.open(`https://twitter.com/${element.user_screen_name}/status/${element.id}`, "blank")}/>
-                <Typography paragraph>  Twitter Handle is {element.user_screen_name} </Typography>
+                <Typography component={'span'}>  Twitter Handle is {element.user_screen_name} </Typography>
 
                
-                <Typography paragraph>
+                <Typography component={'span'}>
                   {element.text}
                
 
