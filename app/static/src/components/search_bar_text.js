@@ -46,6 +46,7 @@ export default function SearchBarText() {
           value={inputValue}
           onChange={handleInput}
         />
+        <br/>
         <Link
           to={{
             pathname: "/text/sentiment",
