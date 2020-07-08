@@ -84,7 +84,12 @@ export default function Home(props) {
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>different models + created my own model</Typography>
+          <Typography>
+            "Sentiment analysis, or opinion mining, is an active area of study
+            in the field of natural language processing that analyzes people's
+            opinions, sentiments, evaluations, attitudes, and emotions via the
+            computational treatment of subjectivity in text"
+          </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel
@@ -146,13 +151,13 @@ export default function Home(props) {
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel
-        expanded={expanded === "panel4"}
-        onChange={handleChange("panel4")}
+        expanded={expanded === "panel5"}
+        onChange={handleChange("panel5")}
       >
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel4bh-content"
-          id="panel4bh-header"
+          aria-controls="panel5bh-content"
+          id="panel5bh-header"
         >
           <Typography className={classes.heading}>Text Examples</Typography>
         </ExpansionPanelSummary>
@@ -160,10 +165,22 @@ export default function Home(props) {
           <HomePosiExamples />
         </ExpansionPanelDetails>
       </ExpansionPanel>
+      <ExpansionPanel
+        expanded={expanded === "panel6"}
+        onChange={handleChange("panel6")}
+      >
+        <ExpansionPanelSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel6bh-content"
+          id="panel6bh-header"
+        >
+          <Typography className={classes.heading}>Twitter Example</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <HomeNegExamples />
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
       <br />
-
-      {/* <HomePosiExamples />
-      <HomeNegExamples /> */}
     </div>
   );
 }
