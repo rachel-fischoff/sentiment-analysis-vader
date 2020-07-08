@@ -19,7 +19,7 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import HomeIcon from "@material-ui/icons/Home";
 import CardMedia from "@material-ui/core/CardMedia";
 import TwitterLogo from "../Twitter_Social_Icon_Rounded_Square_Color.svg";
-import TweetEmbed from 'react-tweet-embed'
+import TweetEmbed from "react-tweet-embed";
 // import borderRadius from '@material-ui/system'
 
 const useStyles = makeStyles((theme) => ({
@@ -127,39 +127,13 @@ export default function TwitterResults(props) {
             Your Search Term is {term}
             <br />
           </Typography>
-          <Paper className={classes.paper}>
-          <TweetEmbed id={element.id} style={{alignItems:'center'}} placeholder={'loading'}
-          />
-          {/* {console.log(element)}
-          <TwitterTweetEmbed tweetId={element.id} /> */}
-          {/* <TwitterTimelineEmbed
-            sourceType="profile"
-            screenName= {element.user_screen_name}
-            options={{ height: 400 }}
-          /> */}
-         
-            {/* <Paper
-              src={`https://publish.twitter.com/oembed?
-  url=https://twitter.com/${element.user_screen_name}/status/${element.id}`}
-            /> */}
-            {/* <Avatar className={classes.avatar} src={TwitterLogo} />
-            <Avatar
-              className={classes.avatar}
-              src={element.profile_pic}
-              onClick={() =>
-                window.open(
-                  `https://twitter.com/${element.user_screen_name}/status/${element.id}`,
-                  "blank"
-                )
-              }
-            />
-            <br />
-            <Typography component={"span"}>
-              {" "}
-              Twitter Handle is {element.user_screen_name}{" "}
-            </Typography>
+          {/* <div style={{ display:'inline-block'
+}} > */}
+    <div   style = {{ display: 'flex', alignItems:'center', justifyContent:'center'}} >
+            <TweetEmbed id={element.id} placeholder={"loading"} />
+          </div>
 
-            <br /> */}
+          <Paper className={classes.paper}>
             <Typography component={"span"}>
               {element.text}
 
