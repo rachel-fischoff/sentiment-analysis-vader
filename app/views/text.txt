@@ -1,1 +1,1 @@
-"Trump"
+"I really need to re think the UI of the application. Specially how to make the home page more dynamic and user friendly. "
