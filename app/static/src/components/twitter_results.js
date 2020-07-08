@@ -129,8 +129,15 @@ export default function TwitterResults(props) {
           </Typography>
           {/* <div style={{ display:'inline-block'
 }} > */}
-    <div   style = {{ display: 'flex', alignItems:'center', justifyContent:'center'}} >
-            <TweetEmbed id={element.id} placeholder={"loading"} />
+          <div 
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              minWidth:'550px'
+            }}
+          >
+            <TweetEmbed id={element.id} placeholder={"loading"} style={{minWidth:'550px'}}/>
           </div>
 
           <Paper className={classes.paper}>
