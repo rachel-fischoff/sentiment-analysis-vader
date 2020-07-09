@@ -8,6 +8,7 @@ import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Chip from "@material-ui/core/Chip";
 
 const useStyles = makeStyles((theme) => ({
   overrides: {
@@ -17,6 +18,14 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
       },
     },
+    MuiExpansionPanelDetails:{
+      root: {
+        display: 'block',
+        textAlign: "center",
+        alignItems: "center",
+  
+      },
+    }
   },
   root: {
     textAlign: "center",
@@ -48,6 +57,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
   },
+  expansionPanelDetails:{
+    root: {
+      display: 'block',
+    }
+  }
 }));
 
 export default function Home(props) {
@@ -124,15 +138,10 @@ export default function Home(props) {
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
-          <Typography className={classes.heading}>
-            What do the colors mean?
-          </Typography>
-          <Typography className={classes.secondaryHeading}>
-            Red, yellow, green + blue
-          </Typography>
+          <Typography className={classes.heading}>Text Examples</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>neg, neu, pos + not counted</Typography>
+          <HomePosiExamples />
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel
@@ -144,12 +153,13 @@ export default function Home(props) {
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography className={classes.heading}>What are n-grams?</Typography>
+          <Typography className={classes.heading}>Twitter Example</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>N grams</Typography>
+          <HomeNegExamples />
         </ExpansionPanelDetails>
       </ExpansionPanel>
+
       <ExpansionPanel
         expanded={expanded === "panel5"}
         onChange={handleChange("panel5")}
@@ -159,10 +169,40 @@ export default function Home(props) {
           aria-controls="panel5bh-content"
           id="panel5bh-header"
         >
-          <Typography className={classes.heading}>Text Examples</Typography>
+          <Typography className={classes.heading}>
+            What do the colors mean?
+          </Typography>
+          <Typography className={classes.secondaryHeading}>
+            r
+          </Typography>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <HomePosiExamples />
+        <ExpansionPanelDetails classes={classes.expansionPanelDetails} style={{display:'block'}}>
+          <Typography className={classes.typography}>
+            <Chip
+              className={classes.chip}
+              label="positive"
+              clickable
+              style={{ backgroundColor: "#4caf50" }}
+            />
+            <Chip
+              className={classes.chip}
+              label="negative"
+              clickable
+              style={{ backgroundColor: "#d32f2f" }}
+            />
+            <Chip
+              className={classes.chip}
+              label="neutral"
+              clickable
+              style={{ backgroundColor: "#ffee58" }}
+            />
+            <Chip
+              className={classes.chip}
+              label="word not counted"
+              clickable
+              style={{ backgroundColor: "#2196f3" }}
+            />
+          </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel
@@ -174,13 +214,12 @@ export default function Home(props) {
           aria-controls="panel6bh-content"
           id="panel6bh-header"
         >
-          <Typography className={classes.heading}>Twitter Example</Typography>
+          <Typography className={classes.heading}>What are n-grams?</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <HomeNegExamples />
+          <Typography>N grams</Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      <br />
     </div>
   );
 }
