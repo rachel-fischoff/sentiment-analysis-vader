@@ -127,8 +127,7 @@ export default function TwitterResults(props) {
             Your Search Term is {term}
             <br />
           </Typography>
-          {/* <div style={{ display:'inline-block'
-}} > */}
+
           <div 
             style={{
               display: "flex",

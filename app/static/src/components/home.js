@@ -18,14 +18,13 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
       },
     },
-    MuiExpansionPanelDetails:{
+    MuiExpansionPanelDetails: {
       root: {
-        display: 'block',
+        display: "block",
         textAlign: "center",
         alignItems: "center",
-  
       },
-    }
+    },
   },
   root: {
     textAlign: "center",
@@ -57,11 +56,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
   },
-  expansionPanelDetails:{
+  expansionPanelDetails: {
     root: {
-      display: 'block',
-    }
-  }
+      display: "block",
+    },
+  },
 }));
 
 export default function Home(props) {
@@ -172,11 +171,9 @@ export default function Home(props) {
           <Typography className={classes.heading}>
             What do the colors mean?
           </Typography>
-          <Typography className={classes.secondaryHeading}>
-            r
-          </Typography>
+          <Typography className={classes.secondaryHeading}>r</Typography>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails classes={classes.expansionPanelDetails} style={{display:'block'}}>
+        <ExpansionPanelDetails style={{ display: "block" }}>
           <Typography className={classes.typography}>
             <Chip
               className={classes.chip}

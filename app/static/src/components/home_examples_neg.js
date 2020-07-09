@@ -86,7 +86,6 @@ export default function HomeNegExamples() {
     return (
       <div>
         {words.map((element, index) => {
-          console.log(element);
           if (element[2].pos > 0) {
             return (
               <Chip
@@ -139,7 +138,6 @@ export default function HomeNegExamples() {
   //
   return (
     <div className={classes.root}>
-      {/* Probably going to map the data from a json file or database or even csv to here ? */}
       <Box className={classes.box}>
         <div
           style={{
@@ -153,9 +151,9 @@ export default function HomeNegExamples() {
         </div>
 
         <Paper className={classes.paper}>
-          <Typography >
+          <Typography>
             should i put the text here ? grayed out?
-            <br/>
+            <br />
             <Button
               variant="contained"
               color="primary"
@@ -167,9 +165,7 @@ export default function HomeNegExamples() {
             >
               Show Sentiment
             </Button>
-
             {renderSentiment()}
-
             <br />
           </Typography>
 

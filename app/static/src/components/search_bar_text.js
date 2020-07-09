@@ -8,7 +8,6 @@ import InputIcon from "@material-ui/icons/Input";
 import NavBar from "./nav_bar";
 import TextField from "@material-ui/core/TextField";
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -46,7 +45,7 @@ export default function SearchBarText() {
           value={inputValue}
           onChange={handleInput}
         />
-        <br/>
+        <br />
         <Link
           to={{
             pathname: "/text/sentiment",
