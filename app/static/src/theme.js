@@ -1,6 +1,6 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-import RobotoMono from "typeface-roboto-mono";
-import NotoSans from "typeface-noto-sans-full";
+import "typeface-roboto-mono";
+require ("typeface-roboto-mono");
 
 const theme = createMuiTheme({
   root: {
@@ -9,36 +9,45 @@ const theme = createMuiTheme({
   },
   palette: {
     primary: {
-        main: '#6200EE'
+        main: '#834bff'
     },
     secondary: {
-        main:'#64ffda'
+        main:'#651fff'
     },
     type: "dark",
+
+      action: {
+      hover:'#651fff',
+      selected: '#651fff'
+    },
   },
 
   typography: {
-    fontFamily: RobotoMono,
+    fontFamily: "Roboto Mono",
   },
   overrides: {
-   
+
     MuiCssBaseline: {
       "@global": {
-        "@font-face": [RobotoMono],
+        "@font-face": "Roboto Mono",
       },
       body: {
-        fontFamily: ["Roboto-Mono", "NotoSans"].join(","),
+        fontFamily: "Roboto Mono",
       },
       typography: {
-        fontFamily: RobotoMono,
-        NotoSans,
+        fontFamily:"Roboto Mono",
       },
     },
     MuiTypography: {
         root: {
-            fontFamily: RobotoMono,
+            fontFamily:"Roboto Mono",
         }
     },
+    MuiIconButton:{
+      label: {
+        fontFamily: "Roboto Mono",
+      }
+    }
   },
 });
 

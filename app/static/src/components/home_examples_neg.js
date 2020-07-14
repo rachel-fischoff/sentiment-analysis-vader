@@ -69,13 +69,15 @@ export default function HomeNegExamples() {
   };
 
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:5000/home/neg");
-    setDataset(response.data);
-  };
-
-  const fetchWords = async () => {
-    const response = await axios.get("http://localhost:5000/home/neg/words");
-    setWords(response.data);
+    await axios
+      .get("http://localhost:5000/home/neg")
+      .then((response) => setDataset(response.data))
+      .then((data) => {
+        axios
+          .get("http://localhost:5000/home/neg/words")
+          .then((response) => setWords(response.data));
+      })
+      .catch((error) => console.log(error));
   };
 
   useEffect(() => {
@@ -152,19 +154,8 @@ export default function HomeNegExamples() {
 
         <Paper className={classes.paper}>
           <Typography>
-            should i put the text here ? grayed out?
+            TODO: should i put the text here ? grayed out?
             <br />
-            <Button
-              variant="contained"
-              color="primary"
-              className={classes.button}
-              size="small"
-              type="submit"
-              startIcon={<InputIcon>InputIcon</InputIcon>}
-              onClick={fetchWords}
-            >
-              Show Sentiment
-            </Button>
             {renderSentiment()}
             <br />
           </Typography>

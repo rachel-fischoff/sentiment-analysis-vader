@@ -93,11 +93,12 @@ export default function Home(props) {
             What is Sentiment Analysis?
           </Typography>
           <Typography className={classes.secondaryHeading}>
-            NLTK Vader + TensorFlow
+            Built in libraries + My Machine Learning Model
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
+            why is this helpful? what is vader? what is my model? why?
             "Sentiment analysis, or opinion mining, is an active area of study
             in the field of natural language processing that analyzes people's
             opinions, sentiments, evaluations, attitudes, and emotions via the
@@ -118,13 +119,14 @@ export default function Home(props) {
             How does the app work?
           </Typography>
           <Typography className={classes.secondaryHeading}>
-            original text analysis + twitter textual analysis
+            Write your own sentences + search Twitter by subject
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            enter original text or search twitter '[add all the query options
-            for twitter]'
+            Select the menu in the left hand corner and choose to:<br/>
+            1) enter original text - or - <br/> 2) search twitter by subject, username, or hashtag
+          
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -140,7 +142,9 @@ export default function Home(props) {
           <Typography className={classes.heading}>
             What do the colors mean?
           </Typography>
-          <Typography className={classes.secondaryHeading}>r</Typography>
+          <Typography className={classes.secondaryHeading}>
+            positive, negative, neutral or not counted
+          </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails style={{ display: "block" }}>
           <Typography className={classes.typography}>
@@ -181,6 +185,9 @@ export default function Home(props) {
           id="panel4bh-header"
         >
           <Typography className={classes.heading}>What are n-grams?</Typography>
+          <Typography className={classes.secondaryHeading}>
+            TODO: n-gram subheading
+          </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>N grams</Typography>
@@ -196,7 +203,10 @@ export default function Home(props) {
           aria-controls="panel5bh-content"
           id="panel5bh-header"
         >
-          <Typography className={classes.heading}>Text Examples</Typography>
+          <Typography className={classes.heading}>Text Example</Typography>
+          <Typography className={classes.secondaryHeading}>
+            TODO: fix subheading + make word analysis immediate
+          </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <HomePosiExamples />
@@ -212,6 +222,9 @@ export default function Home(props) {
           id="panel6bh-header"
         >
           <Typography className={classes.heading}>Twitter Example</Typography>
+          <Typography className={classes.secondaryHeading}>
+            TODO: fix subheading + make word analysis immediate
+          </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <HomeNegExamples />

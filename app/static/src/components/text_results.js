@@ -76,18 +76,15 @@ export default function TextResults(props) {
   };
 
   const fetchData = async () => {
-    axios
-      .post("http://localhost:5000/text", {
+    axios.post("http://localhost:5000/text", {
         text: inputValue,
       })
       .then((response) => console.log(response.data))
       .then((data) => {
-        axios
-          .get("http://localhost:5000/text/words")
+        axios.get("http://localhost:5000/text/words")
           .then((response) => setWords(response.data))
           .then((data) => {
-            axios
-              .get("http://localhost:5000/text/ngrams")
+            axios.get("http://localhost:5000/text/ngrams")
               .then((response) => setDataset(response.data));
           });
       })
