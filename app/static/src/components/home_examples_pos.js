@@ -69,14 +69,15 @@ export default function HomePosiExamples() {
   };
 
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:5000/home/pos");
-    setDataset(response.data);
-  };
-
-  const fetchWords = async () => {
-    const response = await axios.get("http://localhost:5000/home/pos/words");
-    setWords(response.data);
-
+    await axios
+      .get("http://localhost:5000/home/pos")
+      .then((response) => setDataset(response.data))
+      .then((data) => {
+        axios
+          .get("http://localhost:5000/home/pos/words")
+          .then((response) => setWords(response.data));
+      })
+      .catch((error) => console.log(error));
   };
 
   useEffect(() => {
@@ -147,17 +148,6 @@ export default function HomePosiExamples() {
             "Sometimes your joy is the source of your smile, but sometimes your
             smile can be the source of your joy." ― Thich Nhat Hanh
             <br />
-            <Button
-              variant="contained"
-              color="primary"
-              className={classes.button}
-              size="small"
-              type="submit"
-              startIcon={<InputIcon>InputIcon</InputIcon>}
-              onClick={fetchWords}
-            >
-              Show Sentiment
-            </Button>
             {renderSentiment()}
             <br />
           </Typography>
