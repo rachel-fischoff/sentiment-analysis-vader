@@ -13,13 +13,13 @@ import TextResults from "./components/text_results";
 import SearchBarText from "./components/search_bar_text";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import SearchBarTweet from "./components/search_bar_twitter";
-import { MuiThemeProvider } from "material-ui/styles";
+import { ThemeProvider } from "@material-ui/core/styles"
 import theme from "./theme";
 
 const store = createStore(rootReducer, {}, applyMiddleware(thunk));
 
 render(
-  <MuiThemeProvider theme={theme}>
+  <ThemeProvider theme={theme}>
     <Provider store={store}>
       <Router>
         <React.Fragment>
@@ -41,6 +41,6 @@ render(
         </React.Fragment>
       </Router>
     </Provider>
-  </MuiThemeProvider>,
+  </ThemeProvider>,
   document.getElementById("root")
 );

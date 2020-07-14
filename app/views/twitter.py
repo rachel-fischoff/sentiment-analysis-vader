@@ -56,7 +56,7 @@ def twitter_analyze():
     df = pd.read_csv(
         '/Users/rachel/Desktop/Code/sentiment-analysis/app/views/twitter_text.csv')
     df_list = df['text'].tolist()
-    print(df_list)
+    # print(df_list)
 
     for text in df_list:
 
@@ -138,7 +138,7 @@ def twitter_ngrams_analyze():
         lambda ngrams: vader.polarity_scores(ngrams))
     # # df['score'] = df['score'].str.strip('"')
     df = df.to_dict(orient='list')
-    print(df)
+    # print(df)
     return jsonify(df)
 
 

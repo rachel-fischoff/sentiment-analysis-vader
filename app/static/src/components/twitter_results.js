@@ -141,7 +141,7 @@ export default function TwitterResults(props) {
 
           <Paper className={classes.paper}>
             <Typography component={"span"}>
-
+            
               {element.text}
 
               <br />
