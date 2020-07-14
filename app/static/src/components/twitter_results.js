@@ -88,13 +88,9 @@ export default function TwitterResults(props) {
 
   const fetchData = async () => {
     axios
-      .post(
-        "http://localhost:5000/twitter",
-        {
-          term: term,
-        },
-        console.log(term)
-      )
+      .post("http://localhost:5000/twitter", {
+        term: term,
+      })
       .then((response) => setTweets(response.data.tweets))
       .then((data) => {
         axios
@@ -128,19 +124,24 @@ export default function TwitterResults(props) {
             <br />
           </Typography>
 
-          <div 
+          <div
             style={{
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              minWidth:'550px'
+              minWidth: "550px",
             }}
           >
-            <TweetEmbed id={element.id} placeholder={"loading"} style={{minWidth:'550px'}}/>
+            <TweetEmbed
+              id={element.id}
+              placeholder={"loading"}
+              style={{ minWidth: "550px" }}
+            />
           </div>
 
           <Paper className={classes.paper}>
             <Typography component={"span"}>
+
               {element.text}
 
               <br />

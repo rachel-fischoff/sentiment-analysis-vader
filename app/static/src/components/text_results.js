@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Box from "@material-ui/core/Box";
 import NavBar from "./nav_bar";
-import NGramTextResults from "./n_gram_fetch";
+import NGramTextResults from "./n_gram_text";
 import axios from "axios";
 import Chip from "@material-ui/core/Chip";
 import Button from "@material-ui/core/Button";
