@@ -7,7 +7,7 @@ from app.views.tf_ngrams import run_ngrams
 # import twitter [to be added for when i implement the twitter functions]
 
 tf = Blueprint('tf', __name__)
-CORS(text)
+CORS(tf)
 
 
 #defining the get route for each word and each of their score 
