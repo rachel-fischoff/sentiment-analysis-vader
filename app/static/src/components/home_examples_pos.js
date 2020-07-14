@@ -87,6 +87,7 @@ export default function HomePosiExamples() {
   const renderSentiment = () => {
     return (
       <div>
+        <br/>
         {words.map((element, index) => {
           console.log(element);
           if (element[2].pos > 0) {
