@@ -1,72 +1,99 @@
 ngrams,total_words
-added,1
-the,1
-some,1
-purpose,1
-what,1
-of,1
-just,1
-is,1
+a,1
+for,1
+have,1
+hoo,1
 i,1
-forgot,1
-features,1
-end,1
-this,1
-did,1
-back,1
-write,1
-before,1
-some back,2
-what did,2
-just added,2
-write before,2
-purpose of,2
-did i,2
-is the,2
-i write,2
-this i,2
-back end,2
-of this,2
-what is,2
-i forgot,2
-before i,2
-added some,2
-forgot what,2
-the purpose,2
-end features,2
-i just,2
-some back end,3
-added some back,3
-purpose of this,3
-this i just,3
-the purpose of,3
-did i write,3
-is the purpose,3
-just added some,3
-back end features,3
-write before i,3
-what did i,3
-i write before,3
-i just added,3
-i forgot what,3
-what is the,3
-forgot what is,3
-before i forgot,3
-of this i,3
-this i just added,4
-what is the purpose,4
-what did i write,4
-is the purpose of,4
-some back end features,4
-purpose of this i,4
-of this i just,4
-just added some back,4
-i write before i,4
-i just added some,4
-i forgot what is,4
-forgot what is the,4
-did i write before,4
-before i forgot what,4
-added some back end,4
-the purpose of this,4
-write before i forgot,4
+implement,1
+lot,1
+model,1
+my,1
+own,1
+text,1
+the,1
+to,1
+trying,1
+twitter,1
+will,1
+do,1
+component,1
+later,1
+add,1
+analyzing,1
+boo,1
+am,1
+do boo,2
+model for,2
+am trying,2
+my own,2
+lot to,2
+own model,2
+later i,2
+text i,2
+add the,2
+implement my,2
+the text,2
+the twitter,2
+a lot,2
+boo hoo,2
+i have,2
+i will,2
+trying to,2
+twitter component,2
+for analyzing,2
+to do,2
+have a,2
+to implement,2
+component later,2
+will add,2
+i am,2
+analyzing the,2
+to implement my,3
+text i will,3
+the text i,3
+add the twitter,3
+own model for,3
+trying to implement,3
+a lot to,3
+my own model,3
+the twitter component,3
+twitter component later,3
+to do boo,3
+model for analyzing,3
+i have a,3
+have a lot,3
+i will add,3
+analyzing the text,3
+implement my own,3
+will add the,3
+later i have,3
+for analyzing the,3
+am trying to,3
+component later i,3
+lot to do,3
+do boo hoo,3
+i am trying,3
+twitter component later i,4
+analyzing the text i,4
+have a lot to,4
+trying to implement my,4
+for analyzing the text,4
+component later i have,4
+a lot to do,4
+to implement my own,4
+lot to do boo,4
+i am trying to,4
+model for analyzing the,4
+the twitter component later,4
+i have a lot,4
+the text i will,4
+i will add the,4
+am trying to implement,4
+text i will add,4
+implement my own model,4
+own model for analyzing,4
+later i have a,4
+add the twitter component,4
+my own model for,4
+to do boo hoo,4
+will add the twitter,4

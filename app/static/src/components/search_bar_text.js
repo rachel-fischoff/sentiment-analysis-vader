@@ -40,7 +40,6 @@ export default function SearchBarText() {
           label="enter text here"
           multiline
           rows={8}
-          defaultValue="Default Value"
           variant="outlined"
           value={inputValue}
           onChange={handleInput}

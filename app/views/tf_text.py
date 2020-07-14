@@ -9,7 +9,6 @@ from app.views.tf_ngrams import run_ngrams
 tf = Blueprint('tf', __name__)
 CORS(tf)
 
-
 #defining the get route for each word and each of their score 
 @tf.route('/tf/words', methods = ['GET'])
 
@@ -20,7 +19,7 @@ def return_words ():
     run_ngrams()
     
     #open the text file 
-    with open ('text.txt', 'r') as infile:
+    with open ('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/text.txt', 'r') as infile:
         text_analysis = [infile.read()]
 
     print(text_analysis, text_analysis[0], 'txt analysis + text analysis [0]')
@@ -28,7 +27,7 @@ def return_words ():
     ordered_list = re.sub("[^\w]", " ",  text_analysis[0].lower()).split()
     print(ordered_list, 'ordered_list')
     #use pandas to read the csv
-    df = pd.read_csv('words.csv')
+    df = pd.read_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/words.csv')
     scored_list = df.values.tolist()
     print(scored_list, 'list')
 
@@ -55,7 +54,7 @@ def return_words ():
 #route handler function 
 def return_ngrams ():
     #use pandas to read the csv
-    df = pd.read_csv('ngram.csv')
+    df = pd.read_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/ngram.csv')
     dict = df.to_dict(orient='list')
     print(dict)
     return jsonify(dict)

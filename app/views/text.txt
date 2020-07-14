@@ -1,1 +1,1 @@
-"what did i write before? i forgot. what is the purpose of this? i just added some back end features. "
+"i am trying to implement my own model for analyzing the text. i will add the twitter component later. i have a lot to do . boo hoo. "

@@ -13,15 +13,15 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 def run_ngrams():
     #reconstruct the model 
-    my_model = keras.models.load_model('1591245771.h5')
+    my_model = keras.models.load_model('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/1591245771.h5')
 
     #open the text file 
-    with open ('text.txt', 'r') as infile:
+    with open ('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/text.txt', 'r') as infile:
         text_analysis = [infile.read()]
     
 
     #Use scikit learn to create the ngrams 
-    vectorizer = CountVectorizer(analyzer='word', ngram_range=(1, 3), token_pattern=r'\b\w+\b', min_df=1)
+    vectorizer = CountVectorizer(analyzer='word', ngram_range=(1, 4), token_pattern=r'\b\w+\b', min_df=1)
     X = vectorizer.fit_transform(text_analysis)
     ngrams = vectorizer.get_feature_names()
     print(ngrams, 'ngrams')
@@ -51,7 +51,7 @@ def run_ngrams():
 
 
     #write the classes + anaylsis for ngrams in csv or text to send to front end
-    with open ('ngram.csv', mode='w', newline='') as csv_file:
+    with open ('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/ngram.csv', mode='w', newline='') as csv_file:
         fieldnames = ['ngram', 'score']
         ngram_writer = csv.DictWriter(csv_file, delimiter=',', fieldnames=fieldnames)
         ngram_writer.writeheader()
@@ -63,17 +63,17 @@ def run_ngrams():
     #returns a csv that is alphabetized  
 
     #adds total word column to the csv
-    df = pd.read_csv('ngram.csv')
+    df = pd.read_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/ngram.csv')
     df['totalwords'] = [len(x.split()) for x in df['ngram'].tolist()]
     #sorts values by total words 
     df = df.sort_values(by=['totalwords'])
     #writes the sorted column to the ngram.csv
-    df = df.to_csv(r'ngram.csv', index = False, header=True)
+    df = df.to_csv(r'/Users/rachel/Desktop/Code/sentiment-analysis/app/views/ngram.csv', index = False, header=True)
 
     #create a new csv with the singular words and scores only - 
-    df = pd.read_csv('ngram.csv')
+    df = pd.read_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/ngram.csv')
     df = df.loc[df['totalwords'] == 1]
-    df = df.to_csv(r'words.csv', index = False, header=True)
+    df = df.to_csv(r'/Users/rachel/Desktop/Code/sentiment-analysis/app/views/words.csv', index = False, header=True)
 
     
 if __name__ == "__main__":

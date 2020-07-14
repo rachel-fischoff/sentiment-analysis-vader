@@ -30,12 +30,6 @@ const theme = createMuiTheme({
       "@global": {
         "@font-face": "Roboto Mono",
       },
-      body: {
-        fontFamily: "Roboto Mono",
-      },
-      typography: {
-        fontFamily: "Roboto Mono",
-      },
     },
     MuiTypography: {
       root: {
@@ -51,7 +45,8 @@ const theme = createMuiTheme({
       label: {
         color: "#303030",
       },
+    },
   },
-}});
+});
 
 export default theme;
