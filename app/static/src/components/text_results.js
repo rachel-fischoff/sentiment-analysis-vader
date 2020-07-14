@@ -193,6 +193,8 @@ export default function TextResults(props) {
                   );
                 }
               })}
+              <br/>
+              VADER ANALYZER 
             </div>
           )}
           {showTf && (
@@ -233,11 +235,14 @@ export default function TextResults(props) {
                   );
                 }
               })}
+              <br/>
+              MY TENSOR FLOW MODEL
             </div>
+           
           )}
           <br />
 
-          <Switches />
+          {/* <Switches /> */}
           <Button onClick={showAlternativeModel}> change model </Button>
           <Typography>
             <IconButton
@@ -254,7 +259,7 @@ export default function TextResults(props) {
             </IconButton>
           </Typography>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <NGramTextResults dataset={dataset} />
+            <NGramTextResults dataset={dataset} tfDataset = {tfDataset}/>
           </Collapse>
         </Paper>
       </Box>

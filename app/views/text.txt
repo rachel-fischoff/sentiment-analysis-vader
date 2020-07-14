@@ -1,1 +1,1 @@
-"i am trying to implement my own model for analyzing the text. i will add the twitter component later. i have a lot to do . boo hoo. "
+"are you working faster?\ndid the print statements fuck it up?\ndo my ngrams for my tensorflow model even work?"

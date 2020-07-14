@@ -22,27 +22,27 @@ def return_words ():
     with open ('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/text.txt', 'r') as infile:
         text_analysis = [infile.read()]
 
-    print(text_analysis, text_analysis[0], 'txt analysis + text analysis [0]')
+    # print(text_analysis, text_analysis[0], 'txt analysis + text analysis [0]')
     #read warning 
     ordered_list = re.sub("[^\w]", " ",  text_analysis[0].lower()).split()
-    print(ordered_list, 'ordered_list')
+    # print(ordered_list, 'ordered_list')
     #use pandas to read the csv
     df = pd.read_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/words.csv')
     scored_list = df.values.tolist()
-    print(scored_list, 'list')
+    # print(scored_list, 'list')
 
     # printing original list 
-    print ("The original list is : " + str(scored_list)) 
+    # print ("The original list is : " + str(scored_list)) 
     
-    # printing sort order list 
-    print ("The sort order list is : " + str(ordered_list)) 
+    # # printing sort order list 
+    # print ("The sort order list is : " + str(ordered_list)) 
     
     # using list comprehension 
     # to sort according to other list  
     res = [tuple for x in ordered_list for tuple in scored_list if tuple[0] == x] 
     
-    # printing result 
-    print ("The sorted list is : " + str(res)) 
+    # # printing result 
+    # print ("The sorted list is : " + str(res)) 
 
     return jsonify(res)
     
@@ -56,7 +56,6 @@ def return_ngrams ():
     #use pandas to read the csv
     df = pd.read_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/ngram.csv')
     dict = df.to_dict(orient='list')
-    print(dict)
     return jsonify(dict)
     
 

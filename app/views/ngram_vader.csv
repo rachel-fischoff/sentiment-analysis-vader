@@ -1,99 +1,74 @@
 ngrams,total_words
-a,1
-for,1
-have,1
-hoo,1
-i,1
-implement,1
-lot,1
-model,1
-my,1
-own,1
-text,1
+are,1
+you,1
+working,1
+work,1
+up,1
 the,1
-to,1
-trying,1
-twitter,1
-will,1
-do,1
-component,1
-later,1
-add,1
-analyzing,1
-boo,1
-am,1
-do boo,2
-model for,2
-am trying,2
-my own,2
-lot to,2
-own model,2
-later i,2
-text i,2
-add the,2
-implement my,2
-the text,2
-the twitter,2
-a lot,2
-boo hoo,2
-i have,2
-i will,2
-trying to,2
-twitter component,2
-for analyzing,2
-to do,2
-have a,2
-to implement,2
-component later,2
-will add,2
-i am,2
-analyzing the,2
-to implement my,3
-text i will,3
-the text i,3
-add the twitter,3
-own model for,3
-trying to implement,3
-a lot to,3
-my own model,3
-the twitter component,3
-twitter component later,3
-to do boo,3
-model for analyzing,3
-i have a,3
-have a lot,3
-i will add,3
-analyzing the text,3
-implement my own,3
-will add the,3
-later i have,3
-for analyzing the,3
-am trying to,3
-component later i,3
-lot to do,3
-do boo hoo,3
-i am trying,3
-twitter component later i,4
-analyzing the text i,4
-have a lot to,4
-trying to implement my,4
-for analyzing the text,4
-component later i have,4
-a lot to do,4
-to implement my own,4
-lot to do boo,4
-i am trying to,4
-model for analyzing the,4
-the twitter component later,4
-i have a lot,4
-the text i will,4
-i will add the,4
-am trying to implement,4
-text i will add,4
-implement my own model,4
-own model for analyzing,4
-later i have a,4
-add the twitter component,4
-my own model for,4
-to do boo hoo,4
-will add the twitter,4
+tensorflow,1
+statements,1
+print,1
+ngrams,1
+ndid,1
+my,1
+model,1
+it,1
+ndo,1
+fuck,1
+even,1
+for,1
+faster,1
+print statements,2
+ndo my,2
+the print,2
+faster ndid,2
+ndid the,2
+working faster,2
+statements fuck,2
+my tensorflow,2
+ngrams for,2
+fuck it,2
+my ngrams,2
+for my,2
+model even,2
+tensorflow model,2
+it up,2
+are you,2
+you working,2
+even work,2
+up ndo,2
+tensorflow model even,3
+up ndo my,3
+print statements fuck,3
+faster ndid the,3
+statements fuck it,3
+you working faster,3
+ndo my ngrams,3
+are you working,3
+ndid the print,3
+my tensorflow model,3
+working faster ndid,3
+my ngrams for,3
+model even work,3
+for my tensorflow,3
+it up ndo,3
+fuck it up,3
+ngrams for my,3
+the print statements,3
+up ndo my ngrams,4
+are you working faster,4
+working faster ndid the,4
+ngrams for my tensorflow,4
+tensorflow model even work,4
+statements fuck it up,4
+print statements fuck it,4
+faster ndid the print,4
+ndo my ngrams for,4
+ndid the print statements,4
+my tensorflow model even,4
+my ngrams for my,4
+it up ndo my,4
+for my tensorflow model,4
+fuck it up ndo,4
+the print statements fuck,4
+you working faster ndid,4
