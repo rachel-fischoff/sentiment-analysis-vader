@@ -34,7 +34,7 @@ export default function SearchBarText() {
     <div>
       <NavBar />
       <div className={classes.root}>
-        <h2>Enter Text</h2>
+        <h2>Try Your Own Sentences!</h2>
         <TextField
           id="outlined-multiline-static"
           label="enter text here"

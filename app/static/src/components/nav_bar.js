@@ -49,6 +49,7 @@ const StyledMenuItem = withStyles((theme) => ({
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    fontFamily:'Courier',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -101,7 +102,7 @@ export default function NavBar() {
               <ListItemIcon>
                 <TextFieldsIcon fontSize="small" />
               </ListItemIcon>
-              <ListItemText primary="Enter Text" />
+              <ListItemText primary="Try Your Own Text" />
             </StyledMenuItem>
           </StyledMenu>
           <Typography variant="h6" className={classes.title}>

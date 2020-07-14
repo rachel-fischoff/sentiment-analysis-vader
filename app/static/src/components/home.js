@@ -137,37 +137,6 @@ export default function Home(props) {
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
-          <Typography className={classes.heading}>Text Examples</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <HomePosiExamples />
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel
-        expanded={expanded === "panel4"}
-        onChange={handleChange("panel4")}
-      >
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel4bh-content"
-          id="panel4bh-header"
-        >
-          <Typography className={classes.heading}>Twitter Example</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <HomeNegExamples />
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-
-      <ExpansionPanel
-        expanded={expanded === "panel5"}
-        onChange={handleChange("panel5")}
-      >
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel5bh-content"
-          id="panel5bh-header"
-        >
           <Typography className={classes.heading}>
             What do the colors mean?
           </Typography>
@@ -203,6 +172,37 @@ export default function Home(props) {
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel
+        expanded={expanded === "panel4"}
+        onChange={handleChange("panel4")}
+      >
+        <ExpansionPanelSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel4bh-content"
+          id="panel4bh-header"
+        >
+          <Typography className={classes.heading}>What are n-grams?</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <Typography>N grams</Typography>
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
+
+      <ExpansionPanel
+        expanded={expanded === "panel5"}
+        onChange={handleChange("panel5")}
+      >
+        <ExpansionPanelSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel5bh-content"
+          id="panel5bh-header"
+        >
+          <Typography className={classes.heading}>Text Examples</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <HomePosiExamples />
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
+      <ExpansionPanel
         expanded={expanded === "panel6"}
         onChange={handleChange("panel6")}
       >
@@ -211,10 +211,10 @@ export default function Home(props) {
           aria-controls="panel6bh-content"
           id="panel6bh-header"
         >
-          <Typography className={classes.heading}>What are n-grams?</Typography>
+          <Typography className={classes.heading}>Twitter Example</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>N grams</Typography>
+          <HomeNegExamples />
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>

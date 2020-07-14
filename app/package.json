@@ -39,7 +39,10 @@
     "react-tweet-embed": "^1.2.2",
     "react-twitter-embed": "^3.0.3",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sans": "^1.0.0",
+    "typeface-noto-sans-full": "^1.0.1",
+    "typeface-roboto-mono": "0.0.75"
   },
   "eslintConfig": {
     "extends": "react-app"

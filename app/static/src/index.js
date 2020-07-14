@@ -5,7 +5,6 @@ import './index.css';
 import App from './App';
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
-import 'bootstrap/dist/css/bootstrap.css'
 import Home from './components/home';
 import thunk from "redux-thunk";
 import rootReducer from "./reducers/index";
@@ -14,14 +13,17 @@ import TextResults from './components/text_results'
 import SearchBarText from './components/search_bar_text';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import SearchBarTweet from './components/search_bar_twitter'
+import { MuiThemeProvider} from 'material-ui/styles';
+import theme from './theme'
 
 const store = createStore(rootReducer, {}, applyMiddleware(thunk));
 
 render(
+  <MuiThemeProvider theme={theme}>
   <Provider store={store}>
     <Router  >
       <React.Fragment>
-      <CssBaseline />
+      <CssBaseline/>
         <App>
             <Switch>
               <Route exact path="/" component={Home} />
@@ -34,6 +36,7 @@ render(
         </App>
       </React.Fragment>
     </Router>
-  </Provider>,
+  </Provider>
+  </MuiThemeProvider>,
   document.getElementById("root")
 );
