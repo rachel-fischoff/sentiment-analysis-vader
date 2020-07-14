@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import HomeIcon from "@material-ui/icons/Home";
 import Switches from "./switch";
+import Hidden from "@material-ui/core/Hidden";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -71,15 +72,22 @@ export default function TextResults(props) {
     scores: [{ compound: 0, neg: 0, neu: 0, pos: 0 }],
     total_words: [],
   });
-  const [TfWords, setTfWords] = useState([]);
-  const [TfDataset, setTfDataset] = useState({
+  const [tfWords, setTfWords] = useState([]);
+  const [tfDataset, setTfDataset] = useState({
     ngram: [],
     score: [],
     totalwords: [],
   });
+  const [showVader, setShowVader] = useState(true);
+  const [showTf, setShowTf] = useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
+  };
+
+  const showAlternativeModel = () => {
+    setShowVader(!showVader);
+    setShowTf(!showTf);
   };
 
   const fetchData = async () => {
@@ -137,57 +145,100 @@ export default function TextResults(props) {
           <br />
 
           <br />
-          <div  >
-          {words.map((element, index) => {
-            if (element[2].pos > 0) {
-              return (
-                <Chip
-                  className={classes.chip}
-                  label={element[0]}
-                  clickable
-                  style={{ backgroundColor: "#4caf50" }}
-                  key={index}
-                />
-              );
-            }
+          {showVader && (
+            <div>
+              {words.map((element, index) => {
+                if (element[2].pos > 0) {
+                  return (
+                    <Chip
+                      className={classes.chip}
+                      label={element[0]}
+                      clickable
+                      style={{ backgroundColor: "#4caf50" }}
+                      key={index}
+                    />
+                  );
+                }
 
-            if (element[2].neu > 0) {
-              return (
-                <Chip
-                  className={classes.chip}
-                  label={element[0]}
-                  clickable
-                  style={{ backgroundColor: "#ffee58" }}
-                  key={index}
-                />
-              );
-            }
-            if (element[2].neg > 0) {
-              return (
-                <Chip
-                  className={classes.chip}
-                  label={element[0]}
-                  clickable
-                  key={index}
-                  style={{ backgroundColor: "#d32f2f" }}
-                />
-              );
-            } else {
-              return (
-                <Chip
-                  className={classes.chip}
-                  label={element[0]}
-                  clickable
-                  style={{ backgroundColor: "#2196f3" }}
-                  key={index}
-                />
-              );
-            }
-          })}
-          </div>
-          <br/>
+                if (element[2].neu > 0) {
+                  return (
+                    <Chip
+                      className={classes.chip}
+                      label={element[0]}
+                      clickable
+                      style={{ backgroundColor: "#ffee58" }}
+                      key={index}
+                    />
+                  );
+                }
+                if (element[2].neg > 0) {
+                  return (
+                    <Chip
+                      className={classes.chip}
+                      label={element[0]}
+                      clickable
+                      key={index}
+                      style={{ backgroundColor: "#d32f2f" }}
+                    />
+                  );
+                } else {
+                  return (
+                    <Chip
+                      className={classes.chip}
+                      label={element[0]}
+                      clickable
+                      style={{ backgroundColor: "#2196f3" }}
+                      key={index}
+                    />
+                  );
+                }
+              })}
+            </div>
+          )}
+          {showTf && (
+            <div>
+              {tfWords.map((element, index) => {
+                if (element[1] > 0) {
+                  return (
+                    <Chip
+                      className={classes.chip}
+                      label={element[0]}
+                      clickable
+                      style={{ backgroundColor: "#4caf50" }}
+                      key={index}
+                    />
+                  );
+                }
+
+                if (element[1] < -0.5) {
+                  return (
+                    <Chip
+                      className={classes.chip}
+                      label={element[0]}
+                      clickable
+                      style={{ backgroundColor: "#d32f2f" }}
+                      key={index}
+                    />
+                  );
+                }
+                if (0 > element[1] > -0.5) {
+                  return (
+                    <Chip
+                      className={classes.chip}
+                      label={element[0]}
+                      clickable
+                      key={index}
+                      style={{ backgroundColor: "#ffee58" }}
+                    />
+                  );
+                }
+              })}
+            </div>
+          )}
+          <br />
+
           <Switches />
-
+          <Button onClick={showAlternativeModel}> change model </Button>
           <Typography>
             <IconButton
               className={clsx(classes.expand, {
