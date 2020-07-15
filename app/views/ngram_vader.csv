@@ -1,19 +1,54 @@
 ngrams,total_words
-analysis,1
-application,1
-is,1
-this,1
-sentiment,1
-my,1
-this is,2
-sentiment analysis,2
-my sentiment,2
-is my,2
-analysis application,2
-my sentiment analysis,3
-is my sentiment,3
-sentiment analysis application,3
-this is my,3
-my sentiment analysis application,4
-is my sentiment analysis,4
-this is my sentiment,4
+an,1
+hour,1
+i,1
+have,1
+me,1
+go,1
+start,1
+get,1
+help,1
+through,1
+to,1
+before,1
+today,1
+filming,1
+help me,2
+through today,2
+me get,2
+i start,2
+i have,2
+to go,2
+today i,2
+start filming,2
+hour to,2
+an hour,2
+before i,2
+have an,2
+get through,2
+go before,2
+help me get,3
+an hour to,3
+to go before,3
+through today i,3
+before i start,3
+get through today,3
+me get through,3
+go before i,3
+have an hour,3
+today i have,3
+i have an,3
+hour to go,3
+i start filming,3
+help me get through,4
+to go before i,4
+an hour to go,4
+hour to go before,4
+go before i start,4
+before i start filming,4
+i have an hour,4
+me get through today,4
+have an hour to,4
+get through today i,4
+through today i have,4
+today i have an,4

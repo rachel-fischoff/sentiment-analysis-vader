@@ -276,16 +276,17 @@ export default function Home(props) {
             together.
             <br /> A 2-gram (or bi-gram) is a two-word sequence of words. In
             this application I use uni-grams, bi-grams, tri-grams and
-            four-grams. I use Scikit-Learn to process the N-grams. <br /> For
-            example, "This is my sentiment analysis application." The{" "}
-            <strong style={{ color: "#834bff" }}>Uni-grams</strong> are (
-            "this", "is", "my", "sentiment", "analysis", "application"). The
-            <strong style={{ color: "#834bff" }}>Bi-grams</strong> are ( "this
-            is", "is my", "my sentiment", "sentiment analysis", "analysis
-            application"). The{" "}
-            <strong style={{ color: "#834bff" }}>Tri-grams</strong>are ("this is
-            my", "is my sentiment", "my sentiment analysis", "sentiment analysis
-            application"). Finally, the{" "}
+            four-grams. I use Scikit-Learn to process the N-grams. <br /> <br />
+            For example, "This is my sentiment analysis application." <br />{" "}
+            <br />
+            The <strong style={{ color: "#834bff" }}>Uni-grams</strong> are (
+            "this", "is", "my", "sentiment", "analysis", "application"). <br />{" "}
+            The <strong style={{ color: "#834bff" }}>Bi-grams</strong> are (
+            "this is", "is my", "my sentiment", "sentiment analysis", "analysis
+            application"). <br /> The{" "}
+            <strong style={{ color: "#834bff" }}>Tri-grams</strong> are ("this
+            is my", "is my sentiment", "my sentiment analysis", "sentiment
+            analysis application"). <br /> Finally, the{" "}
             <strong style={{ color: "#834bff" }}>Four-grams</strong> are( "my
             sentiment analysis application","is my sentiment analysis", "this is
             my sentiment").

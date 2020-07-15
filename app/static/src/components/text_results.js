@@ -240,7 +240,7 @@ export default function TextResults(props) {
                 }
               })}
               <br />
-              MY TENSOR FLOW MODEL
+              MY TENSORFLOW MODEL
             </div>
           )}
           <br />

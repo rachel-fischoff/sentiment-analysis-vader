@@ -7,6 +7,7 @@ import Chip from "@material-ui/core/Chip";
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+import Switch2 from "./switch2";
 
 const useStyles = makeStyles((theme) => ({
   overrides: {
@@ -58,6 +59,11 @@ export default function NGramTextResults(props) {
     setTfDataset(props.tfDataset);
   }, []);
 
+  const showAlternativeModel = () => {
+    setShowVader(!showVader);
+    setShowTf(!showTf);
+  };
+
   const renderNgramChips = () => {
     const combinedArray = dataset.ngrams.map((item, index) => {
       return [item, dataset.scores[index], dataset.total_words[index]];
@@ -78,65 +84,68 @@ export default function NGramTextResults(props) {
 
     return (
       <div className={classes.root}>
-        <CardContent>
-          <List>
-            <ListItem className={classes.list}>
-              <Typography> positive </Typography>
-              <br />
-              {posNgrams.map((element, index) => (
-                <Chip
-                  className={classes.chip}
-                  label={element[0]}
-                  clickable
-                  style={{ backgroundColor: "#4caf50" }}
-                  key={index}
-                />
-              ))}
-            </ListItem>
-            <Divider component="li" />
+        {showVader && (
+          <CardContent>
+            <List>
+              <ListItem className={classes.list}>
+                <Typography> positive </Typography>
+                <br />
+                {posNgrams.map((element, index) => (
+                  <Chip
+                    className={classes.chip}
+                    label={element[0]}
+                    clickable
+                    style={{ backgroundColor: "#4caf50" }}
+                    key={index}
+                  />
+                ))}
+              </ListItem>
+              <Divider component="li" />
 
-            <ListItem className={classes.list}>
-              <Typography> neutral </Typography>
-              <br />
-              {neuNgrams.map((element, index) => (
-                <Chip
-                  className={classes.chip}
-                  label={element[0]}
-                  clickable
-                  key={index}
-                  style={{ backgroundColor: "#ffee58" }}
-                />
-              ))}
-            </ListItem>
-            <Divider component="li" />
-            <ListItem className={classes.list}>
-              <Typography> negative </Typography>
-              <br />
-              {negNgrams.map((element, index) => (
-                <Chip
-                  className={classes.chip}
-                  label={element[0]}
-                  clickable
-                  style={{ backgroundColor: "#d32f2f" }}
-                  key={index}
-                />
-              ))}
-            </ListItem>
+              <ListItem className={classes.list}>
+                <Typography> neutral </Typography>
+                <br />
+                {neuNgrams.map((element, index) => (
+                  <Chip
+                    className={classes.chip}
+                    label={element[0]}
+                    clickable
+                    key={index}
+                    style={{ backgroundColor: "#ffee58" }}
+                  />
+                ))}
+              </ListItem>
+              <Divider component="li" />
+              <ListItem className={classes.list}>
+                <Typography> negative </Typography>
+                <br />
+                {negNgrams.map((element, index) => (
+                  <Chip
+                    className={classes.chip}
+                    label={element[0]}
+                    clickable
+                    style={{ backgroundColor: "#d32f2f" }}
+                    key={index}
+                  />
+                ))}
+              </ListItem>
 
-            <Divider component="li" />
-            <Typography> words not counted </Typography>
-            <br />
-            {otherNgrams.map((element, index) => (
-              <Chip
-                className={classes.chip}
-                label={element[0]}
-                clickable
-                style={{ backgroundColor: "#2196f3" }}
-                key={index}
-              />
-            ))}
-          </List>
-        </CardContent>
+              <Divider component="li" />
+              <Typography> words not counted </Typography>
+              <br />
+              {otherNgrams.map((element, index) => (
+                <Chip
+                  className={classes.chip}
+                  label={element[0]}
+                  clickable
+                  style={{ backgroundColor: "#2196f3" }}
+                  key={index}
+                />
+              ))}
+            </List>
+            VADER ANALYZER
+          </CardContent>
+        )}
       </div>
     );
   };
@@ -159,60 +168,67 @@ export default function NGramTextResults(props) {
 
     return (
       <div className={classes.root}>
-        <CardContent>
-          <List>
-            <ListItem className={classes.list}>
-              <Typography> positive </Typography>
+        {showTf && (
+          <div>
+          <CardContent>
+            <List>
+              <ListItem className={classes.list}>
+                <Typography> positive </Typography>
 
-              {posNgrams.map((element) => (
-                <Chip
-                  className={classes.chip}
-                  label={element[0]}
-                  clickable
-                  style={{ backgroundColor: "#4caf50" }}
-                  key={element[1]}
-                />
-              ))}
-            </ListItem>
-            <Divider component="li" />
+                {posNgrams.map((element) => (
+                  <Chip
+                    className={classes.chip}
+                    label={element[0]}
+                    clickable
+                    style={{ backgroundColor: "#4caf50" }}
+                    key={element[1]}
+                  />
+                ))}
+              </ListItem>
+              <Divider component="li" />
 
-            <ListItem className={classes.list}>
-              <Typography> neutral </Typography>
-              <br />
-              {neuNgrams.map((element) => (
-                <Chip
-                  className={classes.chip}
-                  label={element[0]}
-                  clickable
-                  key={element[1]}
-                  style={{ backgroundColor: "#ffee58" }}
-                />
-              ))}
-            </ListItem>
-            <Divider component="li" />
-            <ListItem className={classes.list}>
-              <Typography> negative </Typography>
-              <br />
-              {negNgrams.map((element) => (
-                <Chip
-                  className={classes.chip}
-                  label={element[0]}
-                  clickable
-                  style={{ backgroundColor: "#d32f2f" }}
-                  key={element[1]}
-                />
-              ))}
-            </ListItem>
+              <ListItem className={classes.list}>
+                <Typography> neutral </Typography>
+                <br />
+                {neuNgrams.map((element) => (
+                  <Chip
+                    className={classes.chip}
+                    label={element[0]}
+                    clickable
+                    key={element[1]}
+                    style={{ backgroundColor: "#ffee58" }}
+                  />
+                ))}
+              </ListItem>
+              <Divider component="li" />
+              <ListItem className={classes.list}>
+                <Typography> negative </Typography>
+                <br />
+                {negNgrams.map((element) => (
+                  <Chip
+                    className={classes.chip}
+                    label={element[0]}
+                    clickable
+                    style={{ backgroundColor: "#d32f2f" }}
+                    key={element[1]}
+                  />
+                ))}
+              </ListItem>
 
-            <Divider component="li" />
-          </List>
-        </CardContent>
+              <Divider component="li" />
+            </List>
+          </CardContent>
+          MY TENSORFLOW MODEL
+          </div>
+        )}
+
       </div>
     );
   };
 
   return (
     <div>
+      <Switch2 showAlternativeModel={showAlternativeModel}/>
       {renderNgramChips()}
       {renderTfNgramChips()}
     </div>
