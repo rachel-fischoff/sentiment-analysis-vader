@@ -216,6 +216,52 @@ export default function TwitterResults(props) {
                       );
                     }
                   })}
+                  <br />
+                  VADER ANALYZER
+                </div>
+              )}
+              {showTf && (
+                <div>
+                  {/* <LinearDeterminate /> */}
+                  {/* <LinearProgress variant="determinate" value={25} /> */}
+                  {tfWords.map((element, index) => {
+                    if (element[1] > 0) {
+                      return (
+                        <Chip
+                          className={classes.chip}
+                          label={element[0]}
+                          clickable
+                          style={{ backgroundColor: "#4caf50" }}
+                          key={index}
+                        />
+                      );
+                    }
+
+                    if (element[1] < -0.5) {
+                      return (
+                        <Chip
+                          className={classes.chip}
+                          label={element[0]}
+                          clickable
+                          style={{ backgroundColor: "#d32f2f" }}
+                          key={index}
+                        />
+                      );
+                    }
+                    if (0 > element[1] > -0.5) {
+                      return (
+                        <Chip
+                          className={classes.chip}
+                          label={element[0]}
+                          clickable
+                          key={index}
+                          style={{ backgroundColor: "#ffee58" }}
+                        />
+                      );
+                    }
+                  })}
+                  <br />
+                  MY TENSORFLOW MODEL
                 </div>
               )}
 
@@ -234,7 +280,7 @@ export default function TwitterResults(props) {
               </IconButton>
             </Typography>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-              <NGramTwitterResults dataset={dataset} />
+              <NGramTwitterResults dataset={dataset} tfDataset={tfDataset} />
             </Collapse>
           </Paper>
         </Box>
