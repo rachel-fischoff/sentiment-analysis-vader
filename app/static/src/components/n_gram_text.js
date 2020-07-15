@@ -7,7 +7,7 @@ import Chip from "@material-ui/core/Chip";
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import Switch2 from "./switch2";
+import Switch2 from "./switch_text_ngrams";
 
 const useStyles = makeStyles((theme) => ({
   overrides: {

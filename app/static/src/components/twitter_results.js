@@ -17,10 +17,8 @@ import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import HomeIcon from "@material-ui/icons/Home";
-import CardMedia from "@material-ui/core/CardMedia";
-import TwitterLogo from "../Twitter_Social_Icon_Rounded_Square_Color.svg";
+import SwitchTwitterWords from "./switch_twitter_words";
 import TweetEmbed from "react-tweet-embed";
-// import borderRadius from '@material-ui/system'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -72,6 +70,8 @@ export default function TwitterResults(props) {
   const term = props.location.state.term;
 
   const [expanded, setExpanded] = useState(false);
+  const [showVader, setShowVader] = useState(true);
+  const [showTf, setShowTf] = useState(false);
   const [tweets, setTweets] = useState([
     { created_at: "", profile_pic: "", text: "", user_screen_name: "", id: "" },
   ]);
@@ -81,25 +81,45 @@ export default function TwitterResults(props) {
     scores: [{ compound: 0, neg: 0, neu: 0, pos: 0 }],
     total_words: [],
   });
-
+  const [tfWords, setTfWords] = useState([]);
+  const [tfDataset, setTfDataset] = useState({
+    ngram: [],
+    score: [],
+    totalwords: [],
+  });
   const handleExpandClick = () => {
     setExpanded(!expanded);
+  };
+
+  const showAlternativeModel = () => {
+    setShowVader(!showVader);
+    setShowTf(!showTf);
   };
 
   const fetchData = async () => {
     axios
       .post("http://localhost:5000/twitter", {
-      term, 
+        term,
       })
       .then((response) => setTweets(response.data.tweets))
-      .then((data) => {
+      .then(() => {
         axios
           .get("http://localhost:5000/twitter/words")
           .then((response) => setWords(response.data))
-          .then((data) => {
+          .then(() => {
             axios
               .get("http://localhost:5000/twitter/ngrams")
-              .then((response) => setDataset(response.data));
+              .then((response) => setDataset(response.data))
+              .then(() => {
+                axios
+                  .get("http://localhost:5000/tf_twitter/words")
+                  .then((response4) => setTfWords(response4.data))
+                  .then(() => {
+                    axios
+                      .get("http://localhost:5000/tf_twitter/ngrams")
+                      .then((response5) => setTfDataset(response5.data));
+                  });
+              });
           });
       })
       .catch((error) => console.log(error));
@@ -141,58 +161,63 @@ export default function TwitterResults(props) {
 
           <Paper className={classes.paper}>
             <Typography component={"span"}>
-            
               {element.text}
 
               <br />
               <br />
+              <SwitchTwitterWords showAlternativeModel={showAlternativeModel} />
+              <br />
 
-              {words.map((element, index) => {
-                if (element[2].pos > 0) {
-                  return (
-                    <Chip
-                      className={classes.chip}
-                      label={element[0]}
-                      clickable
-                      style={{ backgroundColor: "#4caf50" }}
-                      key={index}
-                    />
-                  );
-                }
+              {showVader && (
+                <div>
+                  {words.map((element, index) => {
+                    if (element[2].pos > 0) {
+                      return (
+                        <Chip
+                          className={classes.chip}
+                          label={element[0]}
+                          clickable
+                          style={{ backgroundColor: "#4caf50" }}
+                          key={index}
+                        />
+                      );
+                    }
 
-                if (element[2].neu > 0) {
-                  return (
-                    <Chip
-                      className={classes.chip}
-                      label={element[0]}
-                      clickable
-                      style={{ backgroundColor: "#ffee58" }}
-                      key={index}
-                    />
-                  );
-                }
-                if (element[2].neg > 0) {
-                  return (
-                    <Chip
-                      className={classes.chip}
-                      label={element[0]}
-                      clickable
-                      key={index}
-                      style={{ backgroundColor: "#d32f2f" }}
-                    />
-                  );
-                } else {
-                  return (
-                    <Chip
-                      className={classes.chip}
-                      label={element[0]}
-                      clickable
-                      style={{ backgroundColor: "#2196f3" }}
-                      key={index}
-                    />
-                  );
-                }
-              })}
+                    if (element[2].neu > 0) {
+                      return (
+                        <Chip
+                          className={classes.chip}
+                          label={element[0]}
+                          clickable
+                          style={{ backgroundColor: "#ffee58" }}
+                          key={index}
+                        />
+                      );
+                    }
+                    if (element[2].neg > 0) {
+                      return (
+                        <Chip
+                          className={classes.chip}
+                          label={element[0]}
+                          clickable
+                          key={index}
+                          style={{ backgroundColor: "#d32f2f" }}
+                        />
+                      );
+                    } else {
+                      return (
+                        <Chip
+                          className={classes.chip}
+                          label={element[0]}
+                          clickable
+                          style={{ backgroundColor: "#2196f3" }}
+                          key={index}
+                        />
+                      );
+                    }
+                  })}
+                </div>
+              )}
 
               <br />
 

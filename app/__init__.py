@@ -13,12 +13,14 @@ def create_app(config_file):
     from .views.text import text
     from .views.twitter import twitter
     from .views.tf_text import tf
+    from .views.tf_twitter import tf_twitter
 
     app.register_blueprint(home)
     app.register_blueprint(twitter)
     app.register_blueprint(text)
     app.register_blueprint(tf)
- 
+    app.register_blueprint(tf_twitter)
+    
     if __name__ == '__main__':
         app.run(debug=True, port=5000)
     

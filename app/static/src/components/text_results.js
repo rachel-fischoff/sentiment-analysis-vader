@@ -16,9 +16,9 @@ import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import HomeIcon from "@material-ui/icons/Home";
-import Switches from "./switch";
-import LinearDeterminate from './linear'
-import LinearProgress from '@material-ui/core/LinearProgress'
+import Switches from "./switch_text_words";
+import LinearDeterminate from "./linear";
+import LinearProgress from "@material-ui/core/LinearProgress";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -107,20 +107,11 @@ export default function TextResults(props) {
               .then((data) => {
                 axios
                   .get("http://localhost:5000/tf/words")
-                  .then(
-                    (response4) => (
-                      setTfWords(response4.data), console.log(response4.data)
-                    )
-                  )
+                  .then((response4) => setTfWords(response4.data))
                   .then((data) => {
                     axios
                       .get("http://localhost:5000/tf/ngrams")
-                      .then(
-                        (response5) => (
-                          setTfDataset(response5.data),
-                          console.log(response5.data)
-                        )
-                      );
+                      .then((response5) => setTfDataset(response5.data));
                   });
               });
           });

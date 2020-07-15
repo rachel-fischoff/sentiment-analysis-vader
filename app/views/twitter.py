@@ -8,6 +8,7 @@ import pandas as pd
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from sklearn.feature_extraction.text import CountVectorizer
 import tweepy
+import numpy as np
 
 vader = SentimentIntensityAnalyzer()
 
@@ -47,6 +48,9 @@ def return_tweets():
             df['text'] = [tweet.text]
             df.to_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/twitter_text.csv',
                       encoding='utf-8', mode='a')
+            text_file = open('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/twitter.txt', 'w')
+            n=text_file.write(tweet.text)
+            text_file.close()
 
     return jsonify({'tweets': t})
 
