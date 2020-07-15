@@ -11,7 +11,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Chip from "@material-ui/core/Chip";
 import Link from "@material-ui/core/Link";
 import CardMedia from "@material-ui/core/CardMedia";
-import Card from '@material-ui/core/Card'
+import Card from "@material-ui/core/Card";
 
 const useStyles = makeStyles((theme) => ({
   overrides: {
@@ -76,8 +76,6 @@ export default function Home(props) {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-
-  const handleClick = () => {};
 
   return (
     <div>
@@ -250,7 +248,6 @@ export default function Home(props) {
               label="word not counted"
               clickable
               style={{ backgroundColor: "#2196f3" }}
-              onClick={handleClick}
             />
             <br /> VADER's analysis doesn't provide a score for words like "i"
             so I created the blue label to indicate those words.
@@ -311,14 +308,14 @@ export default function Home(props) {
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Card >
-          <CardMedia
-            component="video"
-            height="280"
-            image={require("/Users/rachel/Desktop/Code/sentiment-analysis/app/templates/images/text_example.mov")}
-            title="positive example"
-            controls
-          />
+          <Card>
+            <CardMedia
+              component="video"
+              height="280"
+              image={require("/Users/rachel/Desktop/Code/sentiment-analysis/app/templates/images/text_example_720.mov")}
+              title="positive example"
+              controls
+            />
           </Card>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -333,11 +330,19 @@ export default function Home(props) {
         >
           <Typography className={classes.heading}>Twitter Example</Typography>
           <Typography className={classes.secondaryHeading}>
-            TODO: fix subheading + make word analysis immediate
+            Search for Trump
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <HomeNegExamples />
+          <Card>
+            <CardMedia
+              component="video"
+              height="280"
+              image={require("/Users/rachel/Desktop/Code/sentiment-analysis/app/templates/images/twitter_example.mov")}
+              title="trump example"
+              controls
+            />
+          </Card>
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>
