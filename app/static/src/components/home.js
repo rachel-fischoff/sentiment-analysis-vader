@@ -9,6 +9,7 @@ import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Chip from "@material-ui/core/Chip";
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
   overrides: {
@@ -78,6 +79,9 @@ export default function Home(props) {
 
       <Typography className={classes.typography} variant="h4">
         Welcome to my Sentiment Analysis Application!
+        <br />
+        An introduction to Natural Language Processing (NLP) a form of
+        Artificial Intelligence(AI)!
       </Typography>
       <br />
       <ExpansionPanel
@@ -93,16 +97,44 @@ export default function Home(props) {
             What is Sentiment Analysis?
           </Typography>
           <Typography className={classes.secondaryHeading}>
-            Built in libraries + My Machine Learning Model
+            NLP, Sentiment Analysis, My TensorFlow Model & Natural Language
+            Toolkit(NLTK)
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            why is this helpful? what is vader? what is my model? why?
-            "Sentiment analysis, or opinion mining, is an active area of study
-            in the field of natural language processing that analyzes people's
-            opinions, sentiments, evaluations, attitudes, and emotions via the
-            computational treatment of subjectivity in text"
+            <strong style={{ color: "#834bff" }}>
+              Natural Language Processing(NLP)
+            </strong>{" "}
+            is a form of Artificial Intelligence which focuses on the
+            interactions between human language and computers. The aim of NLP is
+            to decipher, understand, and interact with language in a practical
+            and beneficial manner. Text Generation, Text Classification, Machine
+            Translation, Speech Recognition & Sentiment Analysis make up NLP.
+            Everyday examples include Grammarly, Google Translate, Siri, &
+            Alexa.
+            <br />
+            <strong style={{ color: "#834bff" }}>Sentiment Analysis</strong> (or
+            Opinion Mining)analyzes people's opinions, sentiments, evaluations,
+            attitudes, and emotions via Machine Learning(ML). One application is
+            for businesses to know their users' sentiments towards their
+            products. Another application could recognize hate speech patterns
+            on social media. Sentiments are typically classified positive,
+            negative or neutral.
+            <br />
+            <strong style={{ color: "#834bff" }}>My TensorFlow Model</strong> I
+            started this journey constructing my own ML model using
+            TensorFlow(an open source ML library to help you train and develop
+            ML models) and along the way taught myself Python to be able to use
+            its libraries and data analysis. After some trials and tribulations,
+            I constructed a model using this{" "}
+            <Link href="https://www.tensorflow.org/datasets/catalog/imdb_reviews">
+              {" "}
+              dataset
+            </Link>
+            Preprocess, tokenize the
+            <br />
+            <strong style={{ color: "#834bff" }}>NLTK</strong>
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -124,9 +156,10 @@ export default function Home(props) {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            Select the menu in the left hand corner and choose to:<br/>
-            1) enter original text - or - <br/> 2) search twitter by subject, username, or hashtag
-          
+            Select the menu in the left hand corner and choose to:
+            <br />
+            1) enter original text - or - <br /> 2) search twitter by subject,
+            username, or hashtag
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>

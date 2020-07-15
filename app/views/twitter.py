@@ -26,6 +26,7 @@ vader.lexicon.update(new_words)
 def return_tweets():
 
     query = request.get_json()
+    print(query)
     # Authenticate to Twitter
     auth = tweepy.AppAuthHandler(
         current_app.config['API_KEY'], current_app.config['API_SECRET'])
@@ -36,14 +37,14 @@ def return_tweets():
     df = pd.DataFrame()
     t = []
 
-    for tweet in tweepy.Cursor(
-            api.search, tweet_mode='extended', lang='en', q=query, exclude_replies=True).items(1):
+    for tweet in api.search(lang='en', q=query, result_type='recent', count=1):
 
-        if ('RT @' not in tweet.full_text) and (not tweet.retweeted):
+        print(tweet)
+        if ('RT @' not in tweet.text) and (not tweet.retweeted):
 
-            t.append({'text': tweet.full_text, 'profile_pic': tweet.user.profile_image_url_https, 'user_screen_name':
+            t.append({'text': tweet.text, 'profile_pic': tweet.user.profile_image_url_https, 'user_screen_name':
                       tweet.user.screen_name, 'created_at': tweet.created_at, 'id': tweet.id_str})
-            df['text'] = [tweet.full_text]
+            df['text'] = [tweet.text]
             df.to_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/twitter_text.csv',
                       encoding='utf-8', mode='a')
 
