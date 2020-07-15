@@ -143,7 +143,8 @@ export default function TextResults(props) {
           </Typography>
 
           <br />
-
+          <Switches showAlternativeModel={showAlternativeModel}/>
+                {/* <Button onClick={showAlternativeModel}> change model </Button> */}
           <br />
           {showVader && (
             <div>
@@ -242,8 +243,8 @@ export default function TextResults(props) {
           )}
           <br />
 
-          {/* <Switches /> */}
-          <Button onClick={showAlternativeModel}> change model </Button>
+          
+
           <Typography>
             <IconButton
               className={clsx(classes.expand, {

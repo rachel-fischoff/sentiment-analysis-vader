@@ -17,8 +17,8 @@ const theme = createMuiTheme({
     type: "dark",
 
     action: {
-      hover: "#651fff",
-      selected: "#651fff",
+      selected: "#834bff",
+      hover: "#834bff",
     },
   },
 
@@ -46,7 +46,7 @@ const theme = createMuiTheme({
         color: "#303030",
       },
     },
-  },
+    }
 });
 
 export default theme;

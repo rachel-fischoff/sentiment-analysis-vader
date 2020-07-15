@@ -1,1 +1,1 @@
-"are you working faster?\ndid the print statements fuck it up?\ndo my ngrams for my tensorflow model even work?"
+"okay. there are still a lot of front end changes i want to make but the gist of the app is complete and it's really bad ass bc you are awesome! "

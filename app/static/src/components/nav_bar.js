@@ -36,14 +36,14 @@ const StyledMenu = withStyles({
 ));
 
 const StyledMenuItem = withStyles((theme) => ({
-  root: {
-    "&:focus": {
-      backgroundColor: theme.palette.primary.main,
-      "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
-        color: theme.palette.common.white,
-      },
-    },
-  },
+  // root: {
+  //   "&:focus": {
+  //     backgroundColor:"#424242",
+  //     "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
+  //       color: theme.palette.common.white,
+  //     },
+  //   },
+  // },
 }))(MenuItem);
 
 const useStyles = makeStyles((theme) => ({

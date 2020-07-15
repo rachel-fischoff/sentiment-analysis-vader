@@ -6,6 +6,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
+
 const AntSwitch = withStyles((theme) => ({
   root: {
     width: 28,
@@ -40,7 +41,7 @@ const AntSwitch = withStyles((theme) => ({
   checked: {},
 }))(Switch);
 
-export default function Switches() {
+export default function Switches(props) {
   const [state, setState] = useState({
     checkedA: false
   });
@@ -48,6 +49,9 @@ export default function Switches() {
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
+    console.log(props)
+
+    
   };
 
   return (
