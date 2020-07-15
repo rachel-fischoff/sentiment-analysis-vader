@@ -17,7 +17,8 @@ import { Link } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import HomeIcon from "@material-ui/icons/Home";
 import Switches from "./switch";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import LinearDeterminate from './linear'
+import LinearProgress from '@material-ui/core/LinearProgress'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -200,7 +201,8 @@ export default function TextResults(props) {
           )}
           {showTf && (
             <div>
-              <CircularProgress />
+              {/* <LinearDeterminate /> */}
+              <LinearProgress variant="determinate" value={25} />
               {tfWords.map((element, index) => {
                 if (element[1] > 0) {
                   return (

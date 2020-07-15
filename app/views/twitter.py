@@ -42,10 +42,10 @@ def return_tweets():
         if ('RT @' not in tweet.full_text) and (not tweet.retweeted):
 
             t.append({'text': tweet.full_text, 'profile_pic': tweet.user.profile_image_url_https, 'user_screen_name':
-                    tweet.user.screen_name, 'created_at': tweet.created_at, 'id': tweet.id_str})
+                      tweet.user.screen_name, 'created_at': tweet.created_at, 'id': tweet.id_str})
             df['text'] = [tweet.full_text]
             df.to_csv('/Users/rachel/Desktop/Code/sentiment-analysis/app/views/twitter_text.csv',
-                    encoding='utf-8', mode='a')
+                      encoding='utf-8', mode='a')
 
     return jsonify({'tweets': t})
 

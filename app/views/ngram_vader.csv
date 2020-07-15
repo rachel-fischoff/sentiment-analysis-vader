@@ -1,111 +1,85 @@
 ngrams,total_words
-a,1
-helping,1
-hi,1
-i,1
-know,1
-you,1
-loading,1
-me,1
-model,1
-switch,1
-symbol,1
-tensor,1
-thanks,1
-the,1
-think,1
+annoyed,1
+is,1
 to,1
-what,1
-work,1
-have,1
-got,1
-let,1
-emily,1
-and,1
-flow,1
-for,1
-earlier,1
-for helping,2
-emily thanks,2
-let me,2
-loading symbol,2
-me know,2
-model let,2
-earlier i,2
-switch to,2
-symbol for,2
-tensor flow,2
-thanks for,2
-and have,2
-the switch,2
-the tensor,2
-think i,2
-to work,2
-what you,2
-a loading,2
-work and,2
-know what,2
-i think,2
-you think,2
-got the,2
-helping earlier,2
-flow model,2
-hi emily,2
-for the,2
-i got,2
-have a,2
-switch to work,3
-for the tensor,3
-have a loading,3
-think i got,3
-the tensor flow,3
-tensor flow model,3
-and have a,3
-flow model let,3
-thanks for helping,3
-got the switch,3
-the switch to,3
-symbol for the,3
-model let me,3
-i think i,3
-earlier i think,3
-emily thanks for,3
-i got the,3
-know what you,3
-work and have,3
-for helping earlier,3
-helping earlier i,3
-let me know,3
-hi emily thanks,3
-loading symbol for,3
-a loading symbol,3
-me know what,3
-what you think,3
-to work and,3
-think i got the,4
-for helping earlier i,4
-a loading symbol for,4
-for the tensor flow,4
-flow model let me,4
-the tensor flow model,4
-to work and have,4
-work and have a,4
-and have a loading,4
-got the switch to,4
-i think i got,4
-know what you think,4
-emily thanks for helping,4
-let me know what,4
-hi emily thanks for,4
-loading symbol for the,4
-earlier i think i,4
-helping earlier i think,4
-model let me know,4
-switch to work and,4
-have a loading symbol,4
-symbol for the tensor,4
-i got the switch,4
-tensor flow model let,4
-thanks for helping earlier,4
-the switch to work,4
-me know what you,4
+know,1
+twitter,1
+m,1
+i,1
+n,1
+not,1
+how,1
+it,1
+overwhelmed,1
+overheated,1
+part,1
+so,1
+the,1
+dont,1
+working,1
+fix,1
+rachel,1
+bc,1
+overwhelmed overheated,2
+it i,2
+rachel is,2
+m overwhelmed,2
+the twitter,2
+not working,2
+part is,2
+overheated n,2
+know how,2
+so annoyed,2
+to fix,2
+annoyed bc,2
+how to,2
+is not,2
+fix it,2
+working i,2
+bc the,2
+i m,2
+twitter part,2
+is so,2
+dont know,2
+i dont,2
+is so annoyed,3
+overwhelmed overheated n,3
+part is not,3
+bc the twitter,3
+rachel is so,3
+annoyed bc the,3
+dont know how,3
+fix it i,3
+not working i,3
+the twitter part,3
+how to fix,3
+m overwhelmed overheated,3
+i dont know,3
+working i dont,3
+know how to,3
+i m overwhelmed,3
+it i m,3
+is not working,3
+to fix it,3
+twitter part is,3
+so annoyed bc,3
+twitter part is not,4
+the twitter part is,4
+to fix it i,4
+know how to fix,4
+rachel is so annoyed,4
+part is not working,4
+not working i dont,4
+m overwhelmed overheated n,4
+it i m overwhelmed,4
+is so annoyed bc,4
+is not working i,4
+i m overwhelmed overheated,4
+i dont know how,4
+how to fix it,4
+fix it i m,4
+dont know how to,4
+bc the twitter part,4
+annoyed bc the twitter,4
+so annoyed bc the,4
+working i dont know,4

@@ -89,7 +89,7 @@ export default function TwitterResults(props) {
   const fetchData = async () => {
     axios
       .post("http://localhost:5000/twitter", {
-        term: term,
+      term, 
       })
       .then((response) => setTweets(response.data.tweets))
       .then((data) => {

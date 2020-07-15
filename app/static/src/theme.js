@@ -46,7 +46,15 @@ const theme = createMuiTheme({
         color: "#303030",
       },
     },
-    }
+    MuiOutlinedInput: {
+      input: {
+        "&:-webkit-autofill": {
+          WebkitBoxShadow: '0 0 0 100px #303030 inset',
+          WebkitTextFillColor: '#fff' ,
+        },
+      },
+    },
+  },
 });
 
 export default theme;
