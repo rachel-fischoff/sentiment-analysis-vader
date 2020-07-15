@@ -1,1 +1,1 @@
-"okay. there are still a lot of front end changes i want to make but the gist of the app is complete and it's really bad ass bc you are awesome! "
+"hi emily! thanks for helping earlier. i think i got the switch to work and have a loading symbol for the tensor flow model. let me know what you think. "

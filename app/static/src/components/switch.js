@@ -49,8 +49,7 @@ export default function Switches(props) {
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
-    console.log(props)
-
+    props.showAlternativeModel();
     
   };
 

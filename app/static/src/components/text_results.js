@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import HomeIcon from "@material-ui/icons/Home";
 import Switches from "./switch";
-import Hidden from "@material-ui/core/Hidden";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -143,8 +143,8 @@ export default function TextResults(props) {
           </Typography>
 
           <br />
-          <Switches showAlternativeModel={showAlternativeModel}/>
-                {/* <Button onClick={showAlternativeModel}> change model </Button> */}
+          <Switches showAlternativeModel={showAlternativeModel} />
+
           <br />
           {showVader && (
             <div>
@@ -194,12 +194,13 @@ export default function TextResults(props) {
                   );
                 }
               })}
-              <br/>
-              VADER ANALYZER 
+              <br />
+              VADER ANALYZER
             </div>
           )}
           {showTf && (
             <div>
+              <CircularProgress />
               {tfWords.map((element, index) => {
                 if (element[1] > 0) {
                   return (
@@ -236,14 +237,11 @@ export default function TextResults(props) {
                   );
                 }
               })}
-              <br/>
+              <br />
               MY TENSOR FLOW MODEL
             </div>
-           
           )}
           <br />
-
-          
 
           <Typography>
             <IconButton
@@ -260,7 +258,7 @@ export default function TextResults(props) {
             </IconButton>
           </Typography>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
-            <NGramTextResults dataset={dataset} tfDataset = {tfDataset}/>
+            <NGramTextResults dataset={dataset} tfDataset={tfDataset} />
           </Collapse>
         </Paper>
       </Box>
