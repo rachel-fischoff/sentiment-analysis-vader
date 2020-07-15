@@ -10,6 +10,8 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Chip from "@material-ui/core/Chip";
 import Link from "@material-ui/core/Link";
+import CardMedia from "@material-ui/core/CardMedia";
+import Card from '@material-ui/core/Card'
 
 const useStyles = makeStyles((theme) => ({
   overrides: {
@@ -305,11 +307,19 @@ export default function Home(props) {
         >
           <Typography className={classes.heading}>Text Example</Typography>
           <Typography className={classes.secondaryHeading}>
-            TODO: fix subheading + make word analysis immediate
+            Quote by Thich Nhat Hanh
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <HomePosiExamples />
+          <Card >
+          <CardMedia
+            component="video"
+            height="280"
+            image={require("/Users/rachel/Desktop/Code/sentiment-analysis/app/templates/images/text_example.mov")}
+            title="positive example"
+            controls
+          />
+          </Card>
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel
