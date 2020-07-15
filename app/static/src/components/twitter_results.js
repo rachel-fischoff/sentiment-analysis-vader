@@ -204,7 +204,7 @@ export default function TwitterResults(props) {
                 aria-expanded={expanded}
                 aria-label="show more"
               >
-                View NGrams
+                View N-Grams
                 <ExpandMoreIcon className={classes.moreIcon} />
               </IconButton>
             </Typography>

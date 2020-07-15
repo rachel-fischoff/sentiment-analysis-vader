@@ -202,7 +202,7 @@ export default function TextResults(props) {
           {showTf && (
             <div>
               {/* <LinearDeterminate /> */}
-              <LinearProgress variant="determinate" value={25} />
+              {/* <LinearProgress variant="determinate" value={25} /> */}
               {tfWords.map((element, index) => {
                 if (element[1] > 0) {
                   return (
@@ -255,7 +255,7 @@ export default function TextResults(props) {
               aria-label="show more"
             >
               {" "}
-              View NGrams
+              View N-Grams
               <ExpandMoreIcon />
             </IconButton>
           </Typography>

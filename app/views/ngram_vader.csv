@@ -1,85 +1,19 @@
 ngrams,total_words
-annoyed,1
+analysis,1
+application,1
 is,1
-to,1
-know,1
-twitter,1
-m,1
-i,1
-n,1
-not,1
-how,1
-it,1
-overwhelmed,1
-overheated,1
-part,1
-so,1
-the,1
-dont,1
-working,1
-fix,1
-rachel,1
-bc,1
-overwhelmed overheated,2
-it i,2
-rachel is,2
-m overwhelmed,2
-the twitter,2
-not working,2
-part is,2
-overheated n,2
-know how,2
-so annoyed,2
-to fix,2
-annoyed bc,2
-how to,2
-is not,2
-fix it,2
-working i,2
-bc the,2
-i m,2
-twitter part,2
-is so,2
-dont know,2
-i dont,2
-is so annoyed,3
-overwhelmed overheated n,3
-part is not,3
-bc the twitter,3
-rachel is so,3
-annoyed bc the,3
-dont know how,3
-fix it i,3
-not working i,3
-the twitter part,3
-how to fix,3
-m overwhelmed overheated,3
-i dont know,3
-working i dont,3
-know how to,3
-i m overwhelmed,3
-it i m,3
-is not working,3
-to fix it,3
-twitter part is,3
-so annoyed bc,3
-twitter part is not,4
-the twitter part is,4
-to fix it i,4
-know how to fix,4
-rachel is so annoyed,4
-part is not working,4
-not working i dont,4
-m overwhelmed overheated n,4
-it i m overwhelmed,4
-is so annoyed bc,4
-is not working i,4
-i m overwhelmed overheated,4
-i dont know how,4
-how to fix it,4
-fix it i m,4
-dont know how to,4
-bc the twitter part,4
-annoyed bc the twitter,4
-so annoyed bc the,4
-working i dont know,4
+this,1
+sentiment,1
+my,1
+this is,2
+sentiment analysis,2
+my sentiment,2
+is my,2
+analysis application,2
+my sentiment analysis,3
+is my sentiment,3
+sentiment analysis application,3
+this is my,3
+my sentiment analysis application,4
+is my sentiment analysis,4
+this is my sentiment,4

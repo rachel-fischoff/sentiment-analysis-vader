@@ -63,8 +63,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   link: {
-    color: '#b388ff',
-  }
+    color: "#b388ff",
+  },
 }));
 
 export default function Home(props) {
@@ -74,6 +74,8 @@ export default function Home(props) {
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+
+  const handleClick = () => {};
 
   return (
     <div>
@@ -126,18 +128,22 @@ export default function Home(props) {
             negative or neutral.
             <br />
             <strong style={{ color: "#834bff" }}>My TensorFlow Model</strong> I
-            started this journey constructing my own ML model using
-            TensorFlow (an open source ML library to help you train and develop
-            ML models) and along the way taught myself Python to be able to use
-            its libraries and data analysis. After some trials and tribulations with finding datasets, 
-            I constructed my model using this a widely available imdb review 
-            <Link className={classes.link} href="https://www.tensorflow.org/datasets/catalog/imdb_reviews">
+            started this journey constructing my own ML model using TensorFlow
+            (an open source ML library to help you train and develop ML models)
+            and along the way taught myself Python to be able to use its
+            libraries and data analysis. After some trials and tribulations with
+            finding datasets, I constructed my model using this a widely
+            available imdb review
+            <Link
+              className={classes.link}
+              href="https://www.tensorflow.org/datasets/catalog/imdb_reviews"
+            >
               {" "}
               dataset
-            </Link>.{" "}
-            I learned how to prepare the text(data) so it could be used in a ML
-            model. I tokenized the words to get numerical values for them, then
-            I created numerical sequences for the sentences. I adjusted the
+            </Link>
+            . I learned how to prepare the text(data) so it could be used in a
+            ML model. I tokenized the words to get numerical values for them,
+            then I created numerical sequences for the sentences. I adjusted the
             sentences to be all the same length. I set the max number of words
             to tokenize and tweaked the paddings and out of vocabulary (OOV)
             words to create a better fit for the model.
@@ -148,17 +154,24 @@ export default function Home(props) {
             "NLTK is a leading platform for building Python programs to work
             with human language data." When my ML model's results were
             underwhelming, I decide to implement the{" "}
-            <Link className={classes.link}  href="https://www.aaai.org/ocs/index.php/ICWSM/ICWSM14/paper/view/8109">
+            <Link
+              className={classes.link}
+              href="https://www.aaai.org/ocs/index.php/ICWSM/ICWSM14/paper/view/8109"
+            >
               {" "}
-              NLTK's Vader Sentiment Analyzer </Link>.
-              <Link className={classes.link} href="https://github.com/cjhutto/vaderSentiment">
-                {" "}
-                VADER{" "}
-              </Link>{" "}
-              (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and
-              rule-based sentiment analysis tool that is specifically attuned to
-              sentiments expressed in social media.
-           
+              NLTK's Vader Sentiment Analyzer{" "}
+            </Link>
+            .
+            <Link
+              className={classes.link}
+              href="https://github.com/cjhutto/vaderSentiment"
+            >
+              {" "}
+              VADER{" "}
+            </Link>{" "}
+            (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and
+            rule-based sentiment analysis tool that is specifically attuned to
+            sentiments expressed in social media.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -182,8 +195,15 @@ export default function Home(props) {
           <Typography>
             Select the menu in the left hand corner and choose to:
             <br />
-            1) enter original text - or - <br /> 2) search twitter by subject,
-            username, or hashtag
+            1) enter <strong style={{ color: "#834bff" }}>
+              original text
+            </strong>{" "}
+            - or - <br /> 2) search{" "}
+            <strong style={{ color: "#834bff" }}>twitter</strong> by subject
+            <br /> then toogle between{" "}
+            <strong style={{ color: "#834bff" }}>VADER</strong> and{" "}
+            <strong style={{ color: "#834bff" }}>My TensorFlow Model</strong> to
+            see the different analysis of words and N-grams.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -228,7 +248,10 @@ export default function Home(props) {
               label="word not counted"
               clickable
               style={{ backgroundColor: "#2196f3" }}
+              onClick={handleClick}
             />
+            <br /> VADER's analysis doesn't provide a score for words like "i"
+            so I created the blue label to indicate those words.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -241,13 +264,32 @@ export default function Home(props) {
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography className={classes.heading}>What are n-grams?</Typography>
+          <Typography className={classes.heading}>What are N-Grams?</Typography>
           <Typography className={classes.secondaryHeading}>
-            TODO: n-gram subheading
+            relationships between words
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>N grams</Typography>
+          <Typography>
+            An <strong style={{ color: "#834bff" }}>N-gram</strong> is a
+            sequence of N words that help you find meaning when words are
+            together.
+            <br /> A 2-gram (or bi-gram) is a two-word sequence of words. In
+            this application I use uni-grams, bi-grams, tri-grams and
+            four-grams. I use Scikit-Learn to process the N-grams. <br /> For
+            example, "This is my sentiment analysis application." The{" "}
+            <strong style={{ color: "#834bff" }}>Uni-grams</strong> are (
+            "this", "is", "my", "sentiment", "analysis", "application"). The
+            <strong style={{ color: "#834bff" }}>Bi-grams</strong> are ( "this
+            is", "is my", "my sentiment", "sentiment analysis", "analysis
+            application"). The{" "}
+            <strong style={{ color: "#834bff" }}>Tri-grams</strong>are ("this is
+            my", "is my sentiment", "my sentiment analysis", "sentiment analysis
+            application"). Finally, the{" "}
+            <strong style={{ color: "#834bff" }}>Four-grams</strong> are( "my
+            sentiment analysis application","is my sentiment analysis", "this is
+            my sentiment").
+          </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
 

@@ -1,1 +1,1 @@
-"rachel is so annoyed bc the twitter part is not working & i dont know how to fix it. i'm overwhelmed & overheated.\n"
+"this is my sentiment analysis application."
