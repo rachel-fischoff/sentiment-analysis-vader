@@ -62,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
       display: "block",
     },
   },
+  link: {
+    color: '#b388ff',
+  }
 }));
 
 export default function Home(props) {
@@ -115,26 +118,47 @@ export default function Home(props) {
             Alexa.
             <br />
             <strong style={{ color: "#834bff" }}>Sentiment Analysis</strong> (or
-            Opinion Mining)analyzes people's opinions, sentiments, evaluations,
+            Opinion Mining) analyzes people's opinions, sentiments, evaluations,
             attitudes, and emotions via Machine Learning(ML). One application is
             for businesses to know their users' sentiments towards their
             products. Another application could recognize hate speech patterns
-            on social media. Sentiments are typically classified positive,
+            on social media. Sentiments are typically classified as positive,
             negative or neutral.
             <br />
             <strong style={{ color: "#834bff" }}>My TensorFlow Model</strong> I
             started this journey constructing my own ML model using
-            TensorFlow(an open source ML library to help you train and develop
+            TensorFlow (an open source ML library to help you train and develop
             ML models) and along the way taught myself Python to be able to use
-            its libraries and data analysis. After some trials and tribulations,
-            I constructed a model using this{" "}
-            <Link href="https://www.tensorflow.org/datasets/catalog/imdb_reviews">
+            its libraries and data analysis. After some trials and tribulations with finding datasets, 
+            I constructed my model using this a widely available imdb review 
+            <Link className={classes.link} href="https://www.tensorflow.org/datasets/catalog/imdb_reviews">
               {" "}
               dataset
-            </Link>
-            Preprocess, tokenize the
+            </Link>.{" "}
+            I learned how to prepare the text(data) so it could be used in a ML
+            model. I tokenized the words to get numerical values for them, then
+            I created numerical sequences for the sentences. I adjusted the
+            sentences to be all the same length. I set the max number of words
+            to tokenize and tweaked the paddings and out of vocabulary (OOV)
+            words to create a better fit for the model.
             <br />
-            <strong style={{ color: "#834bff" }}>NLTK</strong>
+            <strong style={{ color: "#834bff" }}>
+              Natural Language Toolkit (NLTK)
+            </strong>{" "}
+            "NLTK is a leading platform for building Python programs to work
+            with human language data." When my ML model's results were
+            underwhelming, I decide to implement the{" "}
+            <Link className={classes.link}  href="https://www.aaai.org/ocs/index.php/ICWSM/ICWSM14/paper/view/8109">
+              {" "}
+              NLTK's Vader Sentiment Analyzer </Link>.
+              <Link className={classes.link} href="https://github.com/cjhutto/vaderSentiment">
+                {" "}
+                VADER{" "}
+              </Link>{" "}
+              (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and
+              rule-based sentiment analysis tool that is specifically attuned to
+              sentiments expressed in social media.
+           
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
