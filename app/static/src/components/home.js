@@ -85,7 +85,8 @@ export default function Home(props) {
       <Typography className={classes.typography} variant="h4">
         Welcome to my Sentiment Analysis Application!
         <br />
-        An introduction to Natural Language Processing (NLP) a form of
+        An introduction to Natural Language Processing (NLP) - <br/>
+        a form of
         Artificial Intelligence(AI)!
       </Typography>
       <br />

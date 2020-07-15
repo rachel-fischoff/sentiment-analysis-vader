@@ -38,7 +38,7 @@ def return_tweets():
     df = pd.DataFrame()
     t = []
 
-    for tweet in api.search(lang='en', q=query, result_type='recent', count=1):
+    for tweet in api.search(lang='en', q=query, result_type='recent', count='1'):
 
         print(tweet)
         if ('RT @' not in tweet.text) and (not tweet.retweeted):

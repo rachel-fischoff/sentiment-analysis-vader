@@ -1,57 +1,82 @@
 ngrams,total_words
-be,1
-smile,1
-but,1
-source,1
-of,1
-can,1
-your,1
-is,1
-joy,1
-sometimes,1
-the,1
-sometimes your,2
-smile but,2
-of your,2
-source of,2
-joy is,2
-the source,2
-can be,2
-your joy,2
-but sometimes,2
-your smile,2
-be the,2
-is the,2
-smile can,2
-the source of,3
-source of your,3
-your joy is,3
-sometimes your smile,3
-sometimes your joy,3
-your smile but,3
-smile but sometimes,3
-your smile can,3
-be the source,3
-of your smile,3
-of your joy,3
-but sometimes your,3
-joy is the,3
-can be the,3
-smile can be,3
-is the source,3
-smile can be the,4
-your smile but sometimes,4
-be the source of,4
-your joy is the,4
-but sometimes your smile,4
-the source of your,4
-is the source of,4
-source of your smile,4
-source of your joy,4
-joy is the source,4
-sometimes your smile can,4
-sometimes your joy is,4
-of your smile but,4
-smile but sometimes your,4
-can be the source,4
-your smile can be,4
+and,1
+to,1
+i,1
+my,1
+graduate,1
+get,1
+from,1
+project,1
+for,1
+job,1
+first,1
+excited,1
+engineering,1
+shift,1
+m,1
+coming,1
+demo,1
+thank,1
+you,1
+so,1
+day,1
+get my,2
+my first,2
+to demo,2
+thank you,2
+graduate from,2
+you for,2
+i m,2
+m so,2
+and get,2
+coming to,2
+so excited,2
+from project,2
+demo day,2
+for coming,2
+project shift,2
+day i,2
+to graduate,2
+excited to,2
+shift and,2
+engineering job,2
+first engineering,2
+thank you for,3
+shift and get,3
+m so excited,3
+project shift and,3
+my first engineering,3
+to demo day,3
+you for coming,3
+and get my,3
+coming to demo,3
+day i m,3
+demo day i,3
+to graduate from,3
+i m so,3
+excited to graduate,3
+for coming to,3
+from project shift,3
+get my first,3
+graduate from project,3
+first engineering job,3
+so excited to,3
+to demo day i,4
+to graduate from project,4
+thank you for coming,4
+graduate from project shift,4
+shift and get my,4
+project shift and get,4
+my first engineering job,4
+m so excited to,4
+i m so excited,4
+get my first engineering,4
+from project shift and,4
+for coming to demo,4
+excited to graduate from,4
+demo day i m,4
+day i m so,4
+coming to demo day,4
+and get my first,4
+so excited to graduate,4
+you for coming to,4
