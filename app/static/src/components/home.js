@@ -85,8 +85,7 @@ export default function Home(props) {
       <Typography className={classes.typography} variant="h4">
         Welcome to my Sentiment Analysis Application!
         <br />
-        An introduction to Natural Language Processing (NLP) - <br/>
-        a form of
+        An introduction to Natural Language Processing (NLP) - <br />a form of
         Artificial Intelligence(AI)!
       </Typography>
       <br />
@@ -153,8 +152,10 @@ export default function Home(props) {
               Natural Language Toolkit (NLTK)
             </strong>{" "}
             "NLTK is a leading platform for building Python programs to work
-            with human language data." When my ML model's results were
-            underwhelming, I decide to implement the{" "}
+            with human language data." My model wasn't as robust as some of the
+            other ones out there since it was trained on a smaller set of data,
+            but given more data and more time to train, maybe my model could
+            come to a similar level of accuracy. So, I decide to implement the{" "}
             <Link
               className={classes.link}
               href="https://www.aaai.org/ocs/index.php/ICWSM/ICWSM14/paper/view/8109"
@@ -172,7 +173,8 @@ export default function Home(props) {
             </Link>{" "}
             (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and
             rule-based sentiment analysis tool that is specifically attuned to
-            sentiments expressed in social media.
+            sentiments expressed in social media. I compare my TensorFlow model
+            to the more sophisticated VADER model.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
