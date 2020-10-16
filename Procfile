@@ -1,1 +1,1 @@
-web: gunicorn __init__:'create_app()' --preload
+web: gunicorn app.__init__:'create_app()' --preload
