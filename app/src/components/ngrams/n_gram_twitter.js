@@ -7,7 +7,7 @@ import Chip from "@material-ui/core/Chip";
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import SwitchTwitterNgrams from './switch_twitter_ngrams'
+import SwitchTwitterNgrams from '../switch/switch_twitter_ngrams'
 
 const useStyles = makeStyles((theme) => ({
   overrides: {
@@ -55,12 +55,12 @@ export default function NGramTwitterResults(props) {
 
   useEffect(() => {
     setDataset(props.dataset);
-    setTfDataset(props.tfDataset);
+    // setTfDataset(props.tfDataset);
   }, []);
 
   const showAlternativeModel = () => {
     setShowVader(!showVader);
-    setShowTf(!showTf);
+    // setShowTf(!showTf);
   };
 
   const renderNgramChips = () => {

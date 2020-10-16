@@ -7,17 +7,16 @@ import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Avatar from "@material-ui/core/Avatar";
 import Chip from "@material-ui/core/Chip";
 import Box from "@material-ui/core/Box";
-import NavBar from "./nav_bar";
-import NGramTwitterResults from "./n_gram_twitter";
+import NavBar from "../nav_bar";
+import NGramTwitterResults from "../ngrams/n_gram_twitter";
 import axios from "axios";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import HomeIcon from "@material-ui/icons/Home";
-import SwitchTwitterWords from "./switch_twitter_words";
+import SwitchTwitterWords from "../switch/switch_twitter_words";
 import TweetEmbed from "react-tweet-embed";
 
 const useStyles = makeStyles((theme) => ({
@@ -71,7 +70,7 @@ export default function TwitterResults(props) {
 
   const [expanded, setExpanded] = useState(false);
   const [showVader, setShowVader] = useState(true);
-  const [showTf, setShowTf] = useState(false);
+  // const [showTf, setShowTf] = useState(false);
   const [tweets, setTweets] = useState([
     { created_at: "", profile_pic: "", text: "", user_screen_name: "", id: "" },
   ]);
@@ -81,19 +80,19 @@ export default function TwitterResults(props) {
     scores: [{ compound: 0, neg: 0, neu: 0, pos: 0 }],
     total_words: [],
   });
-  const [tfWords, setTfWords] = useState([]);
-  const [tfDataset, setTfDataset] = useState({
-    ngram: [],
-    score: [],
-    totalwords: [],
-  });
+  // const [tfWords, setTfWords] = useState([]);
+  // const [tfDataset, setTfDataset] = useState({
+  //   ngram: [],
+  //   score: [],
+  //   totalwords: [],
+  // });
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   const showAlternativeModel = () => {
     setShowVader(!showVader);
-    setShowTf(!showTf);
+    // setShowTf(!showTf);
   };
 
   const fetchData = async () => {
@@ -111,14 +110,14 @@ export default function TwitterResults(props) {
               .get("http://localhost:5000/twitter/ngrams")
               .then((response) => setDataset(response.data))
               .then(() => {
-                axios
-                  .get("http://localhost:5000/tf_twitter/words")
-                  .then((response4) => setTfWords(response4.data))
-                  .then(() => {
-                    axios
-                      .get("http://localhost:5000/tf_twitter/ngrams")
-                      .then((response5) => setTfDataset(response5.data));
-                  });
+                // axios
+                //   .get("http://localhost:5000/tf_twitter/words")
+                //   .then((response4) => setTfWords(response4.data))
+                //   .then(() => {
+                //     axios
+                //       .get("http://localhost:5000/tf_twitter/ngrams")
+                //       .then((response5) => setTfDataset(response5.data));
+                //   });
               });
           });
       })
@@ -220,10 +219,8 @@ export default function TwitterResults(props) {
                   VADER ANALYZER
                 </div>
               )}
-              {showTf && (
+              {/* {showTf && (
                 <div>
-                  {/* <LinearDeterminate /> */}
-                  {/* <LinearProgress variant="determinate" value={25} /> */}
                   {tfWords.map((element, index) => {
                     if (element[1] > 0) {
                       return (
@@ -261,9 +258,9 @@ export default function TwitterResults(props) {
                     }
                   })}
                   <br />
-                  MY TENSORFLOW MODEL
-                </div>
-              )}
+                  MY TENSORFLOW MODEL */}
+                {/* </div> */}
+              {/* )} */}
 
               <br />
 
@@ -280,7 +277,7 @@ export default function TwitterResults(props) {
               </IconButton>
             </Typography>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-              <NGramTwitterResults dataset={dataset} tfDataset={tfDataset} />
+              <NGramTwitterResults dataset={dataset} />
             </Collapse>
           </Paper>
         </Box>

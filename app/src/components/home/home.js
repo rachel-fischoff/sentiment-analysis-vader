@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import NavBar from "./nav_bar";
+import NavBar from "../nav_bar";
 import HomePosiExamples from "./home_examples_pos";
 import HomeNegExamples from "./home_examples_neg";
 import Typography from "@material-ui/core/Typography";
@@ -227,7 +227,7 @@ export default function Home(props) {
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails style={{ display: "block" }}>
-          <Typography className={classes.typography} div>
+          <Typography className={classes.typography} component={'span'}>
             <Chip
               className={classes.chip}
               label="positive"
@@ -315,7 +315,7 @@ export default function Home(props) {
             <CardMedia
               component="video"
               height="280"
-              image={require("../images/text_example_720.mov")}
+              image={require("../../images/text_example_720.mov")}
               title="positive example"
               controls
             />
@@ -341,7 +341,7 @@ export default function Home(props) {
             <CardMedia
               component="video"
               height="280"
-              image={require("../images/twitter_example.mov")}
+              image={require("../../images/twitter_example.mov")}
               title="trump example"
               controls
             />

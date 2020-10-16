@@ -12,7 +12,7 @@ import Box from "@material-ui/core/Box";
 import Chip from "@material-ui/core/Chip";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
-import NGramExampleResults from "./n_gram_examples";
+import NGramExampleResults from "../ngrams/n_gram_examples";
 import TweetEmbed from "react-tweet-embed";
 
 const useStyles = makeStyles((theme) => ({

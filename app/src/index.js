@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./index.css";
-import Home from "./components/home";
-import TwitterResults from "./components/twitter_results";
-import TextResults from "./components/text_results";
-import SearchBarText from "./components/search_bar_text";
+import Home from "./components/home/home";
+import TwitterResults from "./components/results/twitter_results";
+import TextResults from "./components/results/text_results";
+import SearchBarText from "./components/search_bars/search_bar_text";
+import SearchBarTweet from "./components/search_bars/search_bar_twitter";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import SearchBarTweet from "./components/search_bar_twitter";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./theme";
 
