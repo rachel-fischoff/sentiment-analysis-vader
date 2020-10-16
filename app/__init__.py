@@ -2,13 +2,13 @@ from flask import Flask
 from flask_cors import CORS
 
 
-def create_app(config_file):
-    app = Flask(__name__, instance_relative_config=True)
+def create_app():
+    app = Flask(__name__)
 
     CORS(app)
 
     # app.config.from_object('config')
-    app.config.from_pyfile('config.py')
+    app.config.from_pyfile('settings.py')
 
     from .views.home import home
     from .views.text import text

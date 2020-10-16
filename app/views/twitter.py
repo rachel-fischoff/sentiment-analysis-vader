@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, make_response, jsonify, request, current_app, config, Config
+from flask import Blueprint, render_template, make_response, jsonify, request, current_app
 from flask_cors import CORS
 import csv
 import re
@@ -6,6 +6,17 @@ import pandas as pd
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from sklearn.feature_extraction.text import CountVectorizer
 import tweepy
+from dotenv import load_dotenv
+
+import os
+
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
+API_SECRET = os.getenv("API_SECRET")
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+TOKEN_SECRET = os.getenv("TOKEN_SECRET")
+
 
 vader = SentimentIntensityAnalyzer()
 
@@ -27,7 +38,7 @@ def return_tweets():
     print(query)
     # Authenticate to Twitter
     auth = tweepy.AppAuthHandler(
-        current_app.config['API_KEY'], current_app.config['API_SECRET'])
+        API_KEY, API_SECRET)
     api = tweepy.API(auth, wait_on_rate_limit=True,
                      wait_on_rate_limit_notify=True)
 

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, make_response, jsonify, request
+from flask import Blueprint, render_template, make_response, jsonify, request, current_app
 from flask_cors import CORS
 import csv
 import re
