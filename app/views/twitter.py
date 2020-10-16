@@ -2,13 +2,10 @@ from flask import Blueprint, render_template, make_response, jsonify, request, c
 from flask_cors import CORS
 import csv
 import re
-import json
-import os
 import pandas as pd
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from sklearn.feature_extraction.text import CountVectorizer
 import tweepy
-import numpy as np
 
 vader = SentimentIntensityAnalyzer()
 

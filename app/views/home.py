@@ -1,6 +1,6 @@
-from flask import Blueprint, render_template, make_response, request, jsonify
+from flask import Blueprint, render_template, make_response, jsonify
 from flask_cors import CORS
-import json, csv, re
+import re
 import pandas as pd
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
