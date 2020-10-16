@@ -7,12 +7,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rachel-fischoff/sentiment-analysis.git"
+    "url": "git+https://github.com/rachel-fischoff/sentiment-analysis-vader.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rachel-fischoff/sentiment-analysis/issues"
+    "url": "https://github.com/rachel-fischoff/sentiment-analysis-vader/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -29,17 +29,12 @@
     "@material-ui/styles": "^4.10.0",
     "axios": "^0.19.2",
     "babel-preset-react": "^6.24.1",
-    "bootstrap": "^4.5.0",
     "material-ui": "^0.20.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.1",
     "react-tweet-embed": "^1.2.2",
-    "react-twitter-embed": "^3.0.3",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0",
     "sans": "^1.0.0",
     "typeface-noto-sans-full": "^1.0.1",
     "typeface-roboto-mono": "0.0.75"
