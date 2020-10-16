@@ -227,7 +227,7 @@ export default function Home(props) {
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails style={{ display: "block" }}>
-          <Typography className={classes.typography}>
+          <Typography className={classes.typography} div>
             <Chip
               className={classes.chip}
               label="positive"
@@ -315,7 +315,7 @@ export default function Home(props) {
             <CardMedia
               component="video"
               height="280"
-              image={require("/Users/rachel/Desktop/Code/sentiment-analysis/app/templates/images/text_example_720.mov")}
+              image={require("../images/text_example_720.mov")}
               title="positive example"
               controls
             />
@@ -341,7 +341,7 @@ export default function Home(props) {
             <CardMedia
               component="video"
               height="280"
-              image={require("/Users/rachel/Desktop/Code/sentiment-analysis/app/templates/images/twitter_example.mov")}
+              image={require("../images/twitter_example.mov")}
               title="trump example"
               controls
             />
