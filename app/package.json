@@ -5,6 +5,7 @@
   "scripts": {
     "start": "react-scripts start"
   },
+  "proxy": "http://localhost:5000/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rachel-fischoff/sentiment-analysis-vader.git"

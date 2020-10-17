@@ -2,8 +2,9 @@ from flask import Flask
 from flask_cors import CORS
 
 
+# port = process.env.port || 5000 
 def create_app():
-    app = Flask(__name__, instance_relative_config=True)
+    app = Flask(__name__)
 
     CORS(app)
 

@@ -97,17 +97,17 @@ export default function TwitterResults(props) {
 
   const fetchData = async () => {
     axios
-      .post("http://localhost:5000/twitter", {
+      .post("/twitter", {
         term,
       })
       .then((response) => setTweets(response.data.tweets))
       .then(() => {
         axios
-          .get("http://localhost:5000/twitter/words")
+          .get("/twitter/words")
           .then((response) => setWords(response.data))
           .then(() => {
             axios
-              .get("http://localhost:5000/twitter/ngrams")
+              .get("/twitter/ngrams")
               .then((response) => setDataset(response.data))
               .then(() => {
                 // axios

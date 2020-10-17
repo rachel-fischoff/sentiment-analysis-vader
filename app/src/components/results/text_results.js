@@ -95,27 +95,27 @@ export default function TextResults(props) {
 
   const fetchData = async () => {
     axios
-      .post("http://localhost:5000/text", {
+      .post("/text", {
         text: inputValue,
       })
       .then((data) => {
         axios
-          .get("http://localhost:5000/text/words")
+          .get("/text/words")
           .then((response2) => setWords(response2.data))
           .then((data) => {
             axios
-              .get("http://localhost:5000/text/ngrams")
+              .get("/text/ngrams")
               .then((response3) => setDataset(response3.data))
-              .then((data) => {
-                axios
-                  .get("http://localhost:5000/tf/words")
-                  .then((response4) => setTfWords(response4.data))
-                  .then((data) => {
-                    axios
-                      .get("http://localhost:5000/tf/ngrams")
-                      .then((response5) => setTfDataset(response5.data));
-                  });
-              });
+              // .then((data) => {
+              //   axios
+              //     .get("http://localhost:5000/tf/words")
+              //     .then((response4) => setTfWords(response4.data))
+              //     .then((data) => {
+              //       axios
+              //         .get("http://localhost:5000/tf/ngrams")
+              //         .then((response5) => setTfDataset(response5.data));
+              //     });
+              // });
           });
       })
       .catch((error) => console.log(error));
