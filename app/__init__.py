@@ -8,7 +8,7 @@ def create_app():
 
     CORS(app)
 
-    # app.config.from_object('settings')
+    # app.config.from_object()
     app.config.from_pyfile('settings.py', silent=True)
 
     from .views.home import home
