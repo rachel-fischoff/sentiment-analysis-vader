@@ -3,12 +3,12 @@ from flask_cors import CORS
 
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__, instance_relative_config=True)
 
     CORS(app)
 
-    # app.config.from_object('config')
-    app.config.from_pyfile('settings.py')
+    app.config.from_object('config.settings')
+    app.config.from_pyfile('settings.py', silent=True)
 
     from .views.home import home
     from .views.text import text
@@ -19,7 +19,7 @@ def create_app():
     app.register_blueprint(text)
 
     if __name__ == "__main__":
-        app.run(debug=True, port=5000)
+        app.run()
 
     return app
 
