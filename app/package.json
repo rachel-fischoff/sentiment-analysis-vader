@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "react-scripts start"
+    "dev": "react-scripts start",
+    "start": "serve -s build"
   },
   "proxy": "http://localhost:5000/",
   "repository": {
@@ -37,6 +38,7 @@
     "react-scripts": "^3.4.3",
     "react-tweet-embed": "^1.2.2",
     "sans": "^1.0.0",
+    "serve": "^11.3.2",
     "typeface-noto-sans-full": "^1.0.1",
     "typeface-roboto-mono": "0.0.75"
   },
