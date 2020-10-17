@@ -3,6 +3,8 @@ from flask_cors import CORS
 
 
 # port = process.env.port || 5000 
+@staticmethod
+# Factory function that creates the flask app 
 def create_app():
     app = Flask(__name__)
 
