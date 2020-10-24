@@ -12,9 +12,9 @@ def create_app():
     # app.config.from_object()
     app.config.from_pyfile('settings.py', silent=True)
 
-    from .views.home import home
-    from .views.text import text
-    from .views.twitter import twitter
+    from .home import home
+    from .text import text
+    from .twitter import twitter
 
     app.register_blueprint(home)
     app.register_blueprint(twitter)
