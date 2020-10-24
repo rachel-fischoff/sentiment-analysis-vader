@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_cors import CORS
+# from flask_cors import CORS
 import os
 
 
@@ -7,7 +7,7 @@ import os
 def create_app():
     app = Flask(__name__, static_folder='../build', static_url_path='/')
 
-    CORS(app)
+    # CORS(app)
 
     # app.config.from_object()
     app.config.from_pyfile('settings.py', silent=True)
