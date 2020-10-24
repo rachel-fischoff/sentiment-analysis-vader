@@ -1,2 +1,1 @@
-web: gunicorn --bind  https://sentiment-text-analysis.herokuapp.com/
-app:app --workers=2
+web: gunicorn --bind  https://sentiment-text-analysis.herokuapp.com/ __init__:app --workers=2
